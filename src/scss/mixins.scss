@@ -1,0 +1,28 @@
+
+@mixin tablets {
+      @media screen and(max-width:$screen-sm) {
+
+        @content;
+    }
+}
+@mixin phones {
+      @media screen and(max-width:$screen-xs) {
+
+    @content;
+    }
+}
+@mixin netbook {
+        @media screen and(max-width:$screen-md) {
+    @content;
+    }
+}
+  @mixin desktop {
+        @media screen and(max-width:$screen-lg) {
+    @content;
+    }
+}
+  @mixin smartTV {
+          @media screen and(max-width:$screen-xl) {
+    @content;
+    }
+}
