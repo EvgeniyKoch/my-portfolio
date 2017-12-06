@@ -16,6 +16,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const replace = require('gulp-replace');
 const del = require('del');
 const plumber = require('gulp-plumber');
+// const fontgen = require('gulp-fontgen');//Генерация шрифтов,которая не работает
 const browserSync = require('browser-sync').create();
 
 const paths =  {
@@ -48,6 +49,12 @@ function scripts() {
     .pipe(concat('script.min.js'))// соеденяет и можно как в этом примере сразу дать название файлу
     .pipe(gulp.dest(paths.build + 'js/'))
 }
+// gulp.task('fontgen', function() { // Генерация шрифтов,которая не работает(((
+//     return gulp.src("src/fonts/*.{ttf,otf}")
+//         .pipe(fontgen({
+//             dest: "build/fonts/"
+//         }));
+// });
 
 function htmls() {
   return gulp.src(paths.src + '*.html')
@@ -56,9 +63,9 @@ function htmls() {
     .pipe(gulp.dest(paths.build));
 }
 
-function clean() {
-  return del('build/')
-}
+// function clean() {
+//   return del('build/')
+// }
 
 function watch() {
   gulp.watch(paths.src + 'scss/*.scss', styles);
@@ -78,11 +85,11 @@ function serve() {
 exports.styles = styles;
 exports.scripts = scripts;
 exports.htmls = htmls;
-exports.clean = clean;
+// exports.clean = clean;
 exports.watch = watch;
 
 gulp.task('build', gulp.series(
-  clean,
+  // clean,
   // styles,
   // scripts,
   // htmls
@@ -90,7 +97,7 @@ gulp.task('build', gulp.series(
 ));
 
 gulp.task('default', gulp.series(
-  clean,
+  // clean,
   gulp.parallel(styles, scripts, htmls),
   gulp.parallel(watch, serve)
 ));

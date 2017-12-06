@@ -1,4 +1,4 @@
-
+//media queries
 @mixin tablets {
       @media screen and(max-width:$screen-sm) {
 
@@ -26,3 +26,4 @@
     @content;
     }
 }
+

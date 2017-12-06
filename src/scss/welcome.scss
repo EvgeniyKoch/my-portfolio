@@ -4,7 +4,7 @@
   background: url("../images/background/mount_bg.jpg")center center no-repeat;
   background-size:cover;
   position: relative;
-};
+}
 .head{
   padding:20px;
   display: flex;
@@ -16,6 +16,13 @@
   border:1px solid #f5f6f5;
   color: #f5f6f5;
   border-radius:5px;
+  font-family: 'robotomedium';
+  font-size:16px;
+  &:hover{
+    background: #ffffff;
+    color: #20c6af;
+    transition: .5s;
+  }
 }
 .user{
   position: absolute;
@@ -23,11 +30,17 @@
   left:50%;
   transform: translate(-50%,-50%);
   width: 380px;
-  height: 350px;
+  height: 395px;
   border-radius: 5px;
   background-color: rgb(252, 252, 252);
   opacity: 0.851;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top:35px;
 }
+
 .foto{
   overflow: hidden;
   width: 135px;
@@ -35,5 +48,72 @@
   border-radius:50%;
   &__user{
     max-width:100%;
+  }
+}
+.name{
+  text-align: center;
+  &__user{
+    font: 28px 'robotomedium';
+    color: #455a64;
+  }
+  &__description {
+    font: 16px 'robotoregular';
+    color: #455a64;
+  }
+}
+.social{
+  display: flex;
+  &__item{
+    margin-right: 20px;
+  }
+  &__icon{
+    fill: #70d1c6;
+    &:hover{
+      fill: $aquamarine;
+      transition: .5s;
+    }
+  }
+}
+.navigation{
+  width: 100%;
+  display: flex;
+  &__item{
+    flex: 1 1 auto;
+    padding: 12px 25px;
+    border-right:1px solid #ffffff;
+    border-bottom:2px solid $aquamarine;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    background: $aquamarine;
+    &:hover{
+      cursor: pointer;
+      background: #159689;
+    }
+    &:last-child{
+      border-right: none;
+    }
+  }
+  &__link{
+    font:16px 'robotomedium';
+    color: #ffffff;
+  }
+}
+.dev{
+  display: flex;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  bottom: 35px;
+  left:50%;
+  &__item{
+    height: 20px;
+    padding:0 5px;
+    border-right:2px solid #ffffff;
+    &:last-child{
+      border-right:none;
+    }
+  }
+  &__text {
+    font:16px 'robotolight';
+    color: #ffffff;
   }
 }

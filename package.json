@@ -18,6 +18,7 @@
     "gulp-cleancss": "^0.2.2",
     "gulp-concat": "^2.6.1",
     "gulp-css-unit": "^1.2.2",
+    "gulp-fontgen": "^0.2.5",
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",

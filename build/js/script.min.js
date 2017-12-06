@@ -1,0 +1,1 @@
+"use strict";var name="User Name",place="Flavortown";console.log("Hello "+name+", ready for "+place+"?");
