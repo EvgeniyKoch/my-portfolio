@@ -1,0 +1,39 @@
+.welcome{
+    height: 100vh;
+  min-height: 40.625rem;
+  background: url("../images/background/mount_bg.jpg")center center no-repeat;
+  background-size:cover;
+  position: relative;
+};
+.head{
+  padding:20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.log-in{
+  padding:15px 25px;
+  border:1px solid #f5f6f5;
+  color: #f5f6f5;
+  border-radius:5px;
+}
+.user{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 380px;
+  height: 350px;
+  border-radius: 5px;
+  background-color: rgb(252, 252, 252);
+  opacity: 0.851;
+}
+.foto{
+  overflow: hidden;
+  width: 135px;
+  height: 135px;
+  border-radius:50%;
+  &__user{
+    max-width:100%;
+  }
+}

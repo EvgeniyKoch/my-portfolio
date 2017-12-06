@@ -1,4 +1,10 @@
-@import 'variables.scss';
-@import 'mixins/*.scss';
+//setup
+@import 'variables';
+@import 'mixins';
+@import  'font';
+//normalize
+@import  'normalize';
+@import   'reset';
+//section
+@import 'welcome';
 
-@import 'global.scss';
