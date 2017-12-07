@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 
+const pug  = require('gulp-pug');
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const groupMediaQueries = require('gulp-group-css-media-queries');//ищет одинаковые медиа условия и группирует их
@@ -20,9 +21,27 @@ const browserSync = require('browser-sync').create();
 
 const paths =  {
   src: './src/',              // paths.src
-  build: './build/'           // paths.build
+  build: './build/',          // paths.build
+    templates:{
+      pages:'src/templates/pages/*.pug',
+      src:'src/templates/**/*.pug',
+      dest:'./build'
+    },
+    images:{
+        src:'src/images/**/*.*',
+        dest:'./build/images/'
+    }
 };
 
+
+//pug
+function templates() {
+    return gulp.src(paths.templates.pages)
+        .pipe(pug({pretty:true}))
+        .pipe(gulp.dest(paths.build));
+}
+
+//scss
 function styles() {
   return gulp.src(paths.src + 'scss/style.scss')
     .pipe(plumber())// что бы если будет ошибка компиляции то процесс слежения не остонавливался
@@ -38,6 +57,13 @@ function styles() {
     .pipe(gulp.dest(paths.build + 'css/'))
 }
 
+//перекладывает images
+function images() {
+    return gulp.src(paths.images.src)
+        .pipe(gulp.dest(paths.images.dest));
+}
+
+//js
 function scripts() {
   return gulp.src(paths.src + 'js/*.js')
     .pipe(plumber())
@@ -49,7 +75,7 @@ function scripts() {
     .pipe(gulp.dest(paths.build + 'js/'))
 }
 
-
+//html
 function htmls() {
   return gulp.src(paths.src + '*.html')
     .pipe(plumber())
@@ -57,16 +83,24 @@ function htmls() {
     .pipe(gulp.dest(paths.build));
 }
 
+
+
+//clean
 function clean() {
   return del('build/*.html')
 }
 
+//watch
 function watch() {
   gulp.watch(paths.src + 'scss/*.scss', styles);
   gulp.watch(paths.src + 'js/*.js', scripts);
   gulp.watch(paths.src + '*.html', htmls);
+  gulp.watch(paths.src + '**/*.pug', templates);
+  gulp.watch(paths.images.src,images);
 }
 
+
+//browserSync
 function serve() {
   browserSync.init({
     server: {
@@ -76,22 +110,27 @@ function serve() {
   browserSync.watch(paths.build + '**/*.*', browserSync.reload);
 }
 
+//
+exports.templates = templates;
 exports.styles = styles;
+exports.images = images;
 exports.scripts = scripts;
 exports.htmls = htmls;
 exports.clean = clean;
 exports.watch = watch;
 
+//параметры выполнения
 gulp.task('build', gulp.series(
   clean,
   // styles,
   // scripts,
   // htmls
-  gulp.parallel(styles, scripts, htmls)
+  gulp.parallel(styles, scripts, htmls,templates)
 ));
 
+//Запуск
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(styles, scripts, htmls),
+  gulp.parallel(styles, scripts, htmls,templates,images),
   gulp.parallel(watch, serve)
 ));

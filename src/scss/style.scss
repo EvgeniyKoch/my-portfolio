@@ -1,12 +1,12 @@
 //setup
-@import 'variables';
-@import 'mixins';
-@import  'font';
+@import 'technologies/variables';
+@import 'technologies/mixins';
+@import  'common/font';
 //normalize
-@import  'normalize';
-@import   'reset';
+@import 'technologies/normalize';
+@import   'technologies/reset';
 //section
-@import "header";
+@import "common/header";
 @import 'welcome';
 @import "blog";
-@import "footer";
+@import "common/footer";
