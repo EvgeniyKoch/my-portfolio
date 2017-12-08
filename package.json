@@ -20,6 +20,7 @@
     "gulp-css-unit": "^1.2.2",
     "gulp-fontgen": "^0.2.5",
     "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-imagemin": "^4.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
@@ -27,7 +28,13 @@
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8",
     "gulp-sourcemaps": "^2.6.1",
+    "gulp-svgo": "^1.2.5",
     "gulp-uglify": "^3.0.0",
+    "gulp-webpack": "^1.5.0",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
     "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }

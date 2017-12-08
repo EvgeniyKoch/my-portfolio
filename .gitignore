@@ -1,5 +1,4 @@
 node_modules/
-package-lock.json
 prepros-6.config
 .idea/
 *.lnk
@@ -7,4 +6,3 @@ prepros-6.config
 *.msi
 *.msm
 *.msp
-distr
