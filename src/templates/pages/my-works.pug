@@ -1,13 +1,22 @@
 html
-    head
-        meta(charset="utf-8")
-        title My works
-        meta(content="" name="description")
-        meta(content="" name="keywords")
-        meta(content="width=device-width, initial-scale=1" name="viewport")
-        meta(content="ie=edge" http-equiv="x-ua-compatible")
-        link(rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico")
-        link(rel="stylesheet" href="css/style.min.css")
-        script(src="js/bundle.js")
+    include ../common/head
     body
+        .wrapper
+            .container
+                section.blog
+                    include ../common/header
+                    .user-blog
+                        .foto
+                            img.foto__user(src='images/img/im.jpg', alt='i')
+                        .user-name
+                            h1.title Кочетов Евгений
+                            p.user__text Личный сайт веб разработчика
+                    a.arrow-scroll(href='#')
+                        svg.icon__scroll(viewbox='0 0 50 50', width='50', height='50')
+                            use(xlink:href='images/icons/sprite.svg#arrow_down')
+
+
+
+
+
 
