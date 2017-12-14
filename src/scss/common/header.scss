@@ -1,0 +1,44 @@
+.header{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin-bottom:30px;
+}
+.social__icon_head{
+  fill: #c0d6d5;
+  &:hover{
+    fill: #ffffff;
+    transition: .5s;
+  }
+}
+.hamburger-menu{
+  display: block;
+  width: 40px;
+  height: 2px;
+  &-bars{
+    width: 40px;
+    height: 4px;
+    background: #ffffff;
+    position: relative;
+    border-radius: 5px;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 4px;
+      background: #ffffff;
+      top:10px;
+      border-radius: 5px;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 4px;
+      background: #ffffff;
+      top:-10px;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+//media queries
+@mixin tablets {
+      @media screen and(max-width:$screen-sm) {
+
+        @content;
+    }
+}
+@mixin phones {
+      @media screen and(max-width:$screen-xs) {
+
+    @content;
+    }
+}
+@mixin netbook {
+        @media screen and(max-width:$screen-md) {
+    @content;
+    }
+}
+  @mixin desktop {
+        @media screen and(max-width:$screen-lg) {
+    @content;
+    }
+}
+  @mixin smartTV {
+          @media screen and(max-width:$screen-xl) {
+    @content;
+    }
+}
+
+//fonts
+@mixin title{
+  font: 63px 'bernier_regularregular';
+  color: $white;
+}
+@mixin subtitle{
+  font: 35px 'bernier_regularregular';
+  color: #455a64;
+}
+
+@mixin roboto{
+  font: 16px/1.4rem 'robotoregular';
+  color: $white;
+}
+@mixin robotoreg{
+  font: 16px/1.625rem 'robotoregular';
+  color: #455a64;
+}
+@mixin robotobold{
+  font: 16px/1.4 'robotobold';
+  color: $aquamarine;
+}
+

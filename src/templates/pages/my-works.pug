@@ -1,0 +1,22 @@
+html
+    include ../common/head
+    body
+        .wrapper
+            .container
+                section.blog
+                    include ../common/header
+                    .user-blog
+                        .foto
+                            img.foto__user(src='images/img/im.jpg', alt='i')
+                        .user-name
+                            h1.title Кочетов Евгений
+                            p.user__text Личный сайт веб разработчика
+                    a.arrow-scroll(href='#')
+                        svg.icon__scroll(viewbox='0 0 50 50', width='50', height='50')
+                            use(xlink:href='images/icons/sprite.svg#arrow_down')
+
+
+
+
+
+

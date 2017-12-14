@@ -1,0 +1,43 @@
+.footer{
+  background: #555b5e;
+  &__up{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 20px 3.125rem;
+    border-bottom:4px solid #666c6e;
+  }
+  &-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 40%;
+    &__link{
+      font:16px/1.62 'robotomedium';
+      color: $white;
+      &:hover {
+        color: $aquamarine;
+        transition: .5s;
+      }
+    }
+  }
+  &__down{
+    padding: 20px 3.125rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__description{
+    width: 40%;
+  }
+  &__description,&__dev{
+    font:16px/1.63  'robotolight';
+    color: #aaadaf;
+  }
+}
+.social__icon_footer{
+  fill: #aaadaf;
+  &:hover{
+    fill:$white;
+    transition: .5s;
+  }
+}
