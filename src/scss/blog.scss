@@ -2,7 +2,8 @@
   @extend .welcome;
   background:url("../images/background/blog_bg.jpg")center bottom no-repeat;
   background-size:cover;
-  clip-path: polygon(0px 0%, 200% 0px, 50% 100%, 0px 67%, 0px 100px);
+  //clip-path: polygon(0px 0%, 200% 0px, 50% 100%, 0px 67%, 0px 100px);
+  z-index: 1;
 }
 
 .user-blog{
@@ -12,7 +13,6 @@
   text-align: center;
   align-items:center;
   position: relative;
-
   &:after{
     content:'';
     position: absolute;
@@ -28,14 +28,53 @@
 }
 .title{
   @include title;
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(255, 255, 255,0.5);
+    top:50%;
+    left:10px;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(255, 255, 255,0.5);
+    top:50%;
+    right:10px;
+  }
 }
 .user__text{
   @include roboto;
+}
+.arrow-scroll{
+  display: block;
+  position: absolute;
+  right: 48%;
+  top:70%;
+}
+.icon__scroll{
+  fill:$white;
 }
 .main-blog{
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    background:url("../images/icons/bg.svg")no-repeat;
+    right:0;
+    left: -1%;
+    height: 100%;
+    top: -13%;
+    z-index: 2;
+  }
 }
 .saidbar{
   width: 35%;

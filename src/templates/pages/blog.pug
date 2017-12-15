@@ -12,7 +12,7 @@ html(lang='ru')
     body
         .wrapper
             .container
-                section.blog
+                section.section.blog
                     include ../common/header
                     .user-blog
                         .foto
@@ -24,7 +24,7 @@ html(lang='ru')
                         svg.icon__scroll(viewbox='0 0 50 50', width='50', height='50')
                             use(xlink:href='images/icons/sprite.svg#arrow_down')
                 // Верхняя часть пойдет на другие страницы
-                main.main-blog
+                section.section.main-blog
                     aside.saidbar
                         ul.saidbar__list
                             li.saidbar__item.saidbar__item-active
