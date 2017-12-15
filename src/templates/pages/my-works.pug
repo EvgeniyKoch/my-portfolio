@@ -1,19 +1,29 @@
-html
-    include ../common/head
-    body
-        .wrapper
-            .container
-                section.blog
-                    include ../common/header
-                    .user-blog
-                        .foto
-                            img.foto__user(src='images/img/im.jpg', alt='i')
-                        .user-name
-                            h1.title Кочетов Евгений
-                            p.user__text Личный сайт веб разработчика
-                    a.arrow-scroll(href='#')
-                        svg.icon__scroll(viewbox='0 0 50 50', width='50', height='50')
-                            use(xlink:href='images/icons/sprite.svg#arrow_down')
+extends ../template
+
+block variables
+    title  Мои работы
+block content
+    .container
+        section.section.blog
+            include ../common/header
+            .user-blog
+                .foto
+                    img.foto__user(src='images/img/im.jpg', alt='i')
+                .user-name
+                    h1.title Евгенний Кочетов
+                    p.user__text Личный сайт веб разработчика
+            a.arrow-scroll(href='#')
+                svg.icon__scroll(viewbox='0 0 50 50', width='50', height='50')
+                    use(xlink:href='images/icons/sprite.svg#arrow_down')
+
+        section.section.about
+            .about__left
+                .about__triangle.about__triangle_white
+                    svg.triangle.triangle_fill_white
+                .about__left_title
+                    .block-title Обо мне
+
+
 
 
 
