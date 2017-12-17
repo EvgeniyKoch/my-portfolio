@@ -26,7 +26,7 @@
 .user-name{
   margin-top:50px;
 }
-.title{
+.title-blog{
   @include title;
   position: relative;
   &:before{
@@ -62,7 +62,6 @@
 }
 .main-blog{
   display: flex;
-  align-items: center;
   justify-content: center;
   position: relative;
   &:before{
@@ -72,13 +71,12 @@
     right:0;
     left: -1%;
     height: 100%;
-    top: -13%;
+    top: -1%;
     z-index: 2;
   }
 }
 .saidbar{
-  width: 35%;
-  min-height:63.75rem;
+  padding: 3.125rem;
   &__list {
     display: flex;
     flex-direction: column;

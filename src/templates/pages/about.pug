@@ -1,0 +1,79 @@
+extends ../template
+
+block variables
+    title  Обо мне
+block content
+    .container
+        section.section-about.blog
+            include ../common/header
+            .user-portfolio
+                .foto
+                    img.foto__user(src='images/img/im.jpg', alt='i')
+                .user-name
+                    h1.title Евгенний Кочетов
+                    p.user__text Личный сайт веб разработчика
+            a.arrow-scroll(href='#')
+                svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25')
+                    use(xlink:href='images/icons/sprite.svg#arrow_down')
+
+        section.section.about
+                .about__left
+                    .about__triangle.about__triangle_white
+                        svg.triangle.triangle_fill_white
+                    .about__left_title
+                        .block-title Обо мне
+                    .about__left-content
+                        .user-description
+                            .user-description__image
+                                img.user-description__avatar(src='images/img/')
+                            .user-description__title
+                                .block-subtitle Кто я
+                            .user-description__text.text-content
+                                p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .about__right
+                    .triangle.tringle_fill_beige.about__right-triangle
+                    .about__right-title
+                        .block-subtitle Чем я могу быть вам полезен
+                    .about__right-text.text-content
+                        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                    .about__right-content
+                        ul.skills-list
+                            each item in ['Frontend', 'Backend', 'Workflow']
+                                li.skills-list__item
+                                    .skills-row
+                                        .skills-row__title #{item}
+                                        ul.skills-row__list
+                                            each skill in ['Html5', 'css3', 'JavaScript']
+                                                li.skills-row__item
+                                                    .skill
+                                                        svg.skill__circle
+                                                        .skill__title #{skill}
+        section.section.map
+            .google-map
+            .map__contacts
+                .contacts
+                    .contacts__title
+                        .block-subtitle Контакты
+                    ul.contacts__list
+                        -
+                            var contacts = [
+                            ['skype', 'skype_kdn'],
+                            ['mail', 'astahov@gmail.com'],
+                            ['phone', '+79211 123 23 23'],
+                            ['mark', 'Новосибирск'],
+                            ]
+                        each contact in contacts
+                            li.contacts__item
+                                .contacts-row
+                                    .contacts-row__icon #{contact[0]}
+                                    .contacts-row__content #{contact[1]}
+
+        include ../common/footer
+
+
+
+
+
+
+
