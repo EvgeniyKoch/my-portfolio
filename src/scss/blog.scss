@@ -54,11 +54,14 @@
 .arrow-scroll{
   display: block;
   position: absolute;
-  right: 48%;
+  right: 49%;
   top:70%;
+  @include smartTV{
+    top:80%;
+  }
 }
 .icon__scroll{
-  fill:$white;
+  fill:#bfced5;
 }
 .main-blog{
   display: flex;

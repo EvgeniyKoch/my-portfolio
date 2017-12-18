@@ -8,66 +8,104 @@ block content
             include ../common/header
             .user-portfolio
                 .foto
-                    img.foto__user(src='images/img/im.jpg', alt='i')
+                    img.foto__user(src='images/img/im2.jpg', alt='i')
                 .user-name
-                    h1.title Евгенний Кочетов
-                    p.user__text Личный сайт веб разработчика
+                    h1.title Евгений Кочетов
+                    p.user__text Личный сайт веб-разработчика
             a.arrow-scroll(href='#')
-                svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25')
+                svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25' preserveAspectRatio="none")
                     use(xlink:href='images/icons/sprite.svg#arrow_down')
+            .about__triangle
+                svg.about__triangle_white(xmlns="http://www.w3.org/2000/svg", viewbox='0 0 1000 85', preserveAspectRatio="none")
+                    polygon.about__triangle_left(fill="#efeee9" points="0,0 0,86 500.8,86 500.8,75.5" )
+                    polygon.about__triangle_right( fill="#eeebdf" points="1000,0 1000,86 500,86 500,75.5" )
 
         section.section.about
-                .about__left
-                    .about__triangle.about__triangle_white
-                        svg.triangle.triangle_fill_white
-                    .about__left_title
-                        .block-title Обо мне
-                    .about__left-content
-                        .user-description
-                            .user-description__image
-                                img.user-description__avatar(src='images/img/')
-                            .user-description__title
-                                .block-subtitle Кто я
-                            .user-description__text.text-content
-                                p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                .about__right
-                    .triangle.tringle_fill_beige.about__right-triangle
-                    .about__right-title
-                        .block-subtitle Чем я могу быть вам полезен
-                    .about__right-text.text-content
-                        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                    .about__right-content
-                        ul.skills-list
-                            each item in ['Frontend', 'Backend', 'Workflow']
-                                li.skills-list__item
-                                    .skills-row
-                                        .skills-row__title #{item}
-                                        ul.skills-row__list
-                                            each skill in ['Html5', 'css3', 'JavaScript']
-                                                li.skills-row__item
-                                                    .skill
-                                                        svg.skill__circle
-                                                        .skill__title #{skill}
+            .about__left
+                .about__left_title
+                    h1.block-title Обо мне
+                .about__left-content
+                    .user-description
+                        .user-description__image
+                            img.user-description__avatar(src='images/img/im4.jpg')
+                        .user-description__title
+                            h2.block-subtitle Кто я
+                        .user-description__text.text-content
+                            p Я веб разработчик из Воронежа. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .about__right
+                .about__right-title
+                    h2.block-subtitle.block-subtitle__right Чем я могу быть вам полезен
+                .about__right-text.text-content
+                    p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                .about__right-content
+                    ul.skills-list
+                        each item in ['Frontend']
+                            li.skills-list__item
+                                .skills-row__title #{item}
+                                    ul.skills-row__list
+                                            li.skills-row__item
+                                                svg.skill__circle(viewBox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circle__second.circle-95(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title HTML
+                                            li.skills-row__item
+                                                svg.skill__circle(viewBox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circle__second.circle-85(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title CSS
+                                            li.skills-row__item
+                                                svg.skill__circle(viewBox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circle__second.circle-15(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title JavaScript
+                    ul.skills-list
+                        each item in ['Backend']
+                            li.skills-list__item
+                                .skills-row__title #{item}
+                                    ul.skills-row__list
+                                        each skill in ['PHP', 'mySQl', 'Node.js']
+                                            li.skills-row__item
+                                                svg.skill__circle(viewBox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circle__second.circle-10(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title #{skill}
+                    ul.skills-list
+                        each item in ['WorkFlow']
+                            li.skills-list__item
+                                .skills-row__title #{item}
+                                    ul.skills-row__list
+                                        each skill in ['Git', 'Gulp','Sass', 'Npm']
+                                            li.skills-row__item
+                                                svg.skill__circle(viewBox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circle__second.circle-75(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title #{skill}
         section.section.map
-            .google-map
-            .map__contacts
-                .contacts
-                    .contacts__title
-                        .block-subtitle Контакты
-                    ul.contacts__list
-                        -
-                            var contacts = [
-                            ['skype', 'skype_kdn'],
-                            ['mail', 'astahov@gmail.com'],
-                            ['phone', '+79211 123 23 23'],
-                            ['mark', 'Новосибирск'],
-                            ]
-                        each contact in contacts
-                            li.contacts__item
-                                .contacts-row
-                                    .contacts-row__icon #{contact[0]}
-                                    .contacts-row__content #{contact[1]}
+            .google-map(id="map")
+            .map__contacts(id="map__contacts")
+                h2.block-subtitle.contacts-subtitle Контакты
+                ul.contacts__list
+                    li.contacts__item
+                        a.contacts-row(href="skype:genek36")
+                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                use(xlink:href='images/icons/sprite.svg#skype')
+                            span.contacts-row__content genek36
+                    li.contacts__item
+                        a.contacts-row(href="mailto:evgkoch@list.ru")
+                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                use(xlink:href='images/icons/sprite.svg#envelope')
+                            span.contacts-row__content evgkoch@list.ru
+                    li.contacts__item
+                        a.contacts-row(href="tel:+79056533950")
+                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                use(xlink:href='images/icons/sprite.svg#phone')
+                            span.contacts-row__content 8 905 653 39 50
+                    li.contacts__item
+                        a.contacts-row(href="skype:genek36")
+                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                use(xlink:href='images/icons/sprite.svg#map_marker')
+                            span.contacts-row__content г.Воронеж, ул. Пятилетка, д.10
 
         include ../common/footer
 

@@ -92,10 +92,21 @@ function fonts() {
 }
 
 // webpack
+// function scripts() {
+//     return gulp.src('src/js/main.js')
+//         .pipe(gulpWebpack(webpackConfig, webpack))
+//         .pipe(gulp.dest(paths.scripts.dest));
+// }
+
 function scripts() {
-    return gulp.src('src/js/main.js')
-        .pipe(gulpWebpack(webpackConfig, webpack))
-        .pipe(gulp.dest(paths.scripts.dest));
+    return gulp.src(paths.src + 'js/*.js')
+        .pipe(plumber())
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(uglify())
+        .pipe(concat('bundle.js'))
+        .pipe(gulp.dest(paths.build + 'js/'))
 }
 
 //html
