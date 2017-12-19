@@ -15,9 +15,54 @@ block content
             a.arrow-scroll(href='#')
                 svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25')
                     use(xlink:href='images/icons/sprite.svg#arrow_down')
+            .about__triangle
+                svg.about__triangle-white(xmlns="http://www.w3.org/2000/svg", viewbox='0 0 1000 85', preserveAspectRatio="none")
+                    polygon.about__triangle_left(fill="#ffffff" points="0,0 0,86 500.8,86 500.8,75.5" )
+                    polygon.about__triangle_right( fill="#ffffff" points="1000,0 1000,86 500,86 500,75.5" )
 
-        .section.my-works
+        section.section.my-works
             .title-work
-                h1.subtitle Мои работы
-                svg.triglle-work
-                svg.bg__work
+                h1.title-works Мои работы
+        section.section.carousel
+
+        section.section.speak
+            .title-speak
+                h1.title-speaks Что обо мне говорят
+            .speak-description
+                .loft-description
+                    img.loft-description__img(src='images/img/quotes.png', alt='quotes')
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .loft-user
+                        .loft-user__img
+                            img.loft-user__pic(src='images/img/kovalchuk.jpg', alt='Kovalchuk')
+                        .loft-name
+                            p Ковальчук Дмитрий
+                            p основатель Loftscool
+                .loft-description
+                    img.loft-description__img(src='images/img/quotes.png', alt='quotes')
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                    .loft-user
+                        .loft-user__img
+                            img.loft-user__pic(src='images/img/sabancev.jpg', alt='Sabancev')
+                        .loft-name
+                            p Сабанцев Владимир
+                            p преподаватель
+            .block-form
+                form.form
+                    h2.subtitle.subtitle-form Связаться со мной
+                    input.form__input.form__name(type="text" placeholder="Имя")
+                    input.form__input.form__email(type="email" placeholder="Email")
+                    textarea.form__message(placeholder="Ваше сообщение")
+                    .form__button
+                        button.form__button_send(id="form__button_send") Отправить
+                        input.form__button_clear(type="reset" name="reset" value="Очистить")
+
+            a.arrow-scroll_up(href="#")
+                svg.icon__scroll_up(viewbox='0 0 50 50', width='25', height='25')
+                    use(xlink:href='images/icons/sprite.svg#portf_arrow_up')
+        include ../common/footer
+
+
+
+
+

@@ -1,4 +1,4 @@
-var mapContacts = document.getElementById('map__contacts');
+var contacts = document.querySelector('.map__contacts');
 //Google-map
 var map;
 function initMap() {
@@ -179,15 +179,18 @@ function initMap() {
             }
         ]
     });
+
     var marker = new google.maps.Marker({
         position: {lat: 51.697354, lng: 39.269249},
         map: map,
         title: 'Я',
         icon: '../images/icons/map_marker.svg'
     });
-    marker.addEventListener('click', function() {
-        mapContacts.style.display='block';
-    });
+
+    // marker.addEventListener('click', function() {
+    //     contacts.style.display = 'block';
+    // });
+
 }
 
 

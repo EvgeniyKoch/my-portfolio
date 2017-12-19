@@ -44,14 +44,92 @@
             <svg class="icon__scroll" viewbox="0 0 50 50" width="25" height="25">
               <use xlink:href="images/icons/sprite.svg#arrow_down"></use>
             </svg></a>
-        </section>
-        <div class="section my-works">
-          <div class="title-work">
-            <h1 class="subtitle">Мои работы</h1>
-            <svg class="triglle-work"></svg>
-            <svg class="bg__work"></svg>
+          <div class="about__triangle">
+            <svg class="about__triangle-white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveAspectRatio="none">
+              <polygon class="about__triangle_left" fill="#ffffff" points="0,0 0,86 500.8,86 500.8,75.5"></polygon>
+              <polygon class="about__triangle_right" fill="#ffffff" points="1000,0 1000,86 500,86 500,75.5"></polygon>
+            </svg>
           </div>
-        </div>
+        </section>
+        <section class="section my-works">
+          <div class="title-work">
+            <h1 class="title-works">Мои работы</h1>
+          </div>
+        </section>
+        <section class="section carousel"></section>
+        <section class="section speak">
+          <div class="title-speak">
+            <h1 class="title-speaks">Что обо мне говорят</h1>
+          </div>
+          <div class="speak-description">
+            <div class="loft-description"><img class="loft-description__img" src="images/img/quotes.png" alt="quotes">
+              <p>Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
+              <div class="loft-user">
+                <div class="loft-user__img"><img class="loft-user__pic" src="images/img/kovalchuk.jpg" alt="Kovalchuk"></div>
+                <div class="loft-name">
+                  <p>Ковальчук Дмитрий</p>
+                  <p>основатель Loftscool</p>
+                </div>
+              </div>
+            </div>
+            <div class="loft-description"><img class="loft-description__img" src="images/img/quotes.png" alt="quotes">
+              <p>Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</p>
+              <div class="loft-user">
+                <div class="loft-user__img"><img class="loft-user__pic" src="images/img/sabancev.jpg" alt="Sabancev"></div>
+                <div class="loft-name">
+                  <p>Сабанцев Владимир</p>
+                  <p>преподаватель</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-form">
+            <form class="form">
+              <h2 class="subtitle subtitle-form">Связаться со мной</h2>
+              <input class="form__input form__name" type="text" placeholder="Имя">
+              <input class="form__input form__email" type="email" placeholder="Email">
+              <textarea class="form__message" placeholder="Ваше сообщение"></textarea>
+              <div class="form__button">
+                <button class="form__button_send" id="form__button_send">Отправить</button>
+                <input class="form__button_clear" type="reset" name="reset" value="Очистить">
+              </div>
+            </form>
+          </div><a class="arrow-scroll_up" href="#">
+            <svg class="icon__scroll_up" viewbox="0 0 50 50" width="25" height="25">
+              <use xlink:href="images/icons/sprite.svg#portf_arrow_up"></use>
+            </svg></a>
+        </section>
+        <footer class="footer">
+          <div class="footer__up">
+            <ul class="footer-nav">
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Мои работы</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Обо мне</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Блог</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Авторизация</a></li>
+            </ul>
+            <ul class="social">
+              <li class="social__item"><a class="social__link" href="#">
+                  <svg class="social__icon_footer" viewbox="0 0 50 50" width="32" height="37">
+                    <use xlink:href="images/icons/sprite.svg#vk_round"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#">
+                  <svg class="social__icon_footer" viewbox="0 0 50 50" width="32" height="37">
+                    <use xlink:href="images/icons/sprite.svg#github_round"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#">
+                  <svg class="social__icon_footer" viewbox="0 0 50 50" width="32" height="37">
+                    <use xlink:href="images/icons/sprite.svg#in_round"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="footer__down">
+            <p class="footer__description">
+              Я веб-разработчик из Воронежа, и этот сайт я сделал в рамках обучения в Школе онлайн образования
+              LoftSchool.
+            </p>
+            <p class="footer__dev">© Евгений Кочетов | создано с любовью в LoftSchool | 2017</p>
+          </div>
+        </footer>
       </div>
     </div>
   </body>
