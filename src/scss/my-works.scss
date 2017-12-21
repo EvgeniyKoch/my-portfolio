@@ -1,0 +1,202 @@
+.title-work{
+  position: relative;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:after{
+    content: '';
+    position: absolute;
+    background: url("../images/icons/works_header.svg")no-repeat;
+    z-index: 5;
+    height: 100%;
+    width:45%;
+    opacity: .2;
+  }
+}
+.title-works {
+  @include title;
+  color: #373e42;
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background-color: rgba(55, 62, 66,.4);
+    top:50%;
+    left:-2.375rem;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background-color: rgba(55, 62, 66,.4);
+    top:50%;
+    right:-2.375rem;
+
+  }
+}
+//-----------------------section CAROUSEL----------------
+.carousel{
+  height: 100vh;
+}
+
+
+
+
+
+
+//-------------------------Speak about------------------
+.speak{
+  min-height: 100%;
+  background: url("../images/background/bg_speak.png")center center no-repeat ;
+  background-size:cover;
+}
+.title-speak{
+  @extend .title-work;
+  &:after{
+    background: url("../images/icons/about_header.svg")no-repeat;
+    width:45%;
+  }
+}
+.title-speaks{
+  @extend .title-works;
+}
+.speak-description{
+  display: flex;
+  justify-content:center;
+}
+.loft-description{
+  padding:0 20px;
+  width: 30%;
+  margin-bottom:70px;
+  &>p:nth-child(2n){
+    @include robotoreg;
+  }
+  &__img{
+    margin-bottom:20px;
+  }
+}
+.loft-user{
+  margin-top:20px;
+  display: flex;
+  align-items:center;
+  &__img{
+    width: 76px;
+    height: 76px;
+    border-radius:50%;
+    overflow: hidden;
+    margin-right:15px;
+  }
+  &__pic{
+    max-width:100%;
+  }
+}
+.loft-name{
+  &>p:first-child{
+    @include robotobold;
+  }
+  &>p:nth-child(2n){
+    @include robotoreg;
+    color: #20b5a1;
+  }
+}
+.block-form{
+  margin:0 auto;
+  background:url("../images/background/bg_blur.png")center top no-repeat;
+  width: 380px;
+  padding:30px 15px 0 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  margin-bottom:60px;
+}
+.form{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items:center;
+}
+.subtitle-form{
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(255, 255, 255,0.5);
+    top:50%;
+    left:-2.375rem;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(255, 255, 255,0.5);
+    top:50%;
+    right:-2.375rem;;
+  }
+}
+.form__input{
+  margin-bottom:20px;
+  width:95%;
+  height: 45px;
+  border-radius:5px;
+  background: $white;
+  padding:0 15px;
+  border: 1px solid transparent;
+}
+.form__message{
+  margin-bottom:60px;
+  width:95%;
+  height: 145px;
+  border-radius:5px;
+  background: $white;
+  padding:10px 15px;
+  border: 1px solid transparent;
+  resize: none;
+}
+.form__button_send{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 45px;
+  background: #06b39e;
+  color: $white;
+  border:1px solid transparent;
+  border-right:1px solid $white;
+  &:hover{
+    cursor: pointer;
+    background: #1b8987;
+    transition:.5s;
+  }
+}
+.form__button_clear{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 45px;
+  background: #06b39e;
+  font-size:16px;
+  color: $white;
+  border:1px solid transparent;
+  &:hover{
+    cursor: pointer;
+    background: #1b8987;
+    transition:.5s;
+  }
+}
+.arrow-scroll_up{
+  display:block;
+  width: 30px;
+  height:100px;
+  margin:0 auto;
+}
+.icon__scroll_up{
+  fill:#b4d0d2;
+}

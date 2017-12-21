@@ -2,8 +2,6 @@
   @extend .welcome;
   background:url("../images/background/blog_bg.jpg")center bottom no-repeat;
   background-size:cover;
-  //clip-path: polygon(0px 0%, 200% 0px, 50% 100%, 0px 67%, 0px 100px);
-  z-index: 1;
 }
 
 .user-blog{
@@ -26,7 +24,7 @@
 .user-name{
   margin-top:50px;
 }
-.title{
+.title-blog{
   @include title;
   position: relative;
   &:before{
@@ -54,31 +52,28 @@
 .arrow-scroll{
   display: block;
   position: absolute;
-  right: 48%;
+  right: 49%;
   top:70%;
+  @include smartTV{
+    top:80%;
+  }
 }
 .icon__scroll{
-  fill:$white;
+  fill:#bfced5;
+}
+.about__triangle-blog{
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
 }
 .main-blog{
   display: flex;
-  align-items: center;
   justify-content: center;
   position: relative;
-  &:before{
-    content: '';
-    position: absolute;
-    background:url("../images/icons/bg.svg")no-repeat;
-    right:0;
-    left: -1%;
-    height: 100%;
-    top: -13%;
-    z-index: 2;
-  }
 }
 .saidbar{
-  width: 35%;
-  min-height:63.75rem;
+  padding: 3.125rem;
   &__list {
     display: flex;
     flex-direction: column;

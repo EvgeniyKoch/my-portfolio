@@ -1,7 +1,7 @@
 .welcome {
   height: 100vh;
   min-height: 40.625rem;
-  background: url("../images/background/mount_bg.jpg") center center no-repeat;
+  background: url("../images/background/mount_bg.jpg") right bottom no-repeat;
   background-size: cover;
   position: relative;
 
@@ -28,7 +28,7 @@
   }
 }
 
-.user {
+.user-front {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -36,7 +36,7 @@
   width: 380px;
   height: 395px;
   border-radius: 5px;
-  background-color: rgb(252, 252, 252);
+  background-color:#e5e5dd;
   opacity: 0.851;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,6 @@
     max-width: 100%;
   }
 }
-
 .name {
   text-align: center;
   &__user {
@@ -92,11 +91,13 @@
   width: 100%;
   display: flex;
   &__item {
+    text-align: center;
     flex: 1 1 auto;
     padding: 12px 25px;
     border-right: 1px solid #ffffff;
-    border-bottom: 2px solid $aquamarine;
+    border-bottom: none;
     background: $aquamarine;
+    transition: .5s;
     &:hover {
       cursor: pointer;
       background: #159689;
@@ -106,7 +107,6 @@
       border-bottom-right-radius: 5px;
     }
     &:first-child {
-      border-right: none;
       border-bottom-left-radius: 5px;
       border-right: 1px solid #ffffff;
     }
@@ -116,6 +116,153 @@
     color: #ffffff;
   }
 }
+.user-login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  height: 395px;
+  border-radius: 5px;
+  background-color:#e5e5dd;
+  opacity: 0.851;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 35px;
+  border-bottom: none;
+  backface-visibility: hidden;
+  transform:rotateY(180deg) translate(50%,-50%);
+  transition: 1s;
+}
+.subtitle-login{
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(55, 62, 66,.2);
+    top:50%;
+    left:-2.375rem;;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(55, 62, 66,.2);
+    top:50%;
+    right:-2.375rem;;
+
+  }
+}
+.login{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  &__svg{
+    width:43px;
+    height: 45px;
+    background: url("../images/icons/login.svg")center center no-repeat;
+    background-color: #f0efe9;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}
+.password{
+  display: flex;
+  align-items: center;
+  &__svg{
+    width:43px;
+    height: 45px;
+    background: url("../images/icons/password.svg")center center no-repeat;
+    background-color: #f0efe9;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}
+.login__user{
+  height: 45px;
+  width: 290px;
+  border:1px solid transparent;
+  outline: none;
+  background: $white;
+  padding:0 15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.test__question{
+  @include robotobold;
+  color: #455a64;
+  text-align: center;
+  margin-bottom:10px;
+}
+.test__radio-button{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+}
+.test__label{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  margin-bottom:15px;
+}
+.test__checkbox,.test__radio{
+  display: none;
+}
+.label-custom{
+  @include robotoreg;
+  margin-left:5px;
+}
+.checkbox-custom,
+.radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  position: relative;
+  display: inline-block;
+}
+.label-custom{
+  display: inline-block;
+}
+
+.checkbox-custom{
+  background: #00bfa5;
+}
+.test__checkbox:checked + .checkbox-custom::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  background: url("../images/icons/check.svg")center center no-repeat;
+  border-radius:2px;
+}
+.test__radio:checked + .radio-custom::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  background: #00bfa5;
+  border-radius: 2px;
+}
+.test__radio:checked ~ .label-custom{
+  color: $aquamarine;
+}
+.radio-custom,
+.test__radio:checked + .radio-custom::before {
+  border-radius: 50%;
+}
+
 
 .dev {
   position: absolute;
@@ -130,5 +277,6 @@
   }
   font: 16px 'robotolight';
   color: #ffffff;
-
 }
+
+
