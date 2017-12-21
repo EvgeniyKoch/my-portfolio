@@ -2,9 +2,9 @@
 
 const gulp = require('gulp');
 
-const gulpWebpack = require('gulp-webpack');
-const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.js');
+// const gulpWebpack = require('gulp-webpack');
+// const webpack = require('webpack');
+// const webpackConfig = require('./webpack.config.js');
 const imagemin = require('gulp-imagemin');
 const pug  = require('gulp-pug');
 const sass = require('gulp-sass');
@@ -71,17 +71,17 @@ function styles() {
 // сжимает перекладывает  images
 function images() {
     return gulp.src(paths.images.src)
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.jpegtran({progressive: true}),
-            imagemin.optipng({optimizationLevel: 5}),
-            imagemin.svgo({
-                plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
-                ]
-            })
-        ]))
+        // .pipe(imagemin([
+        //     imagemin.gifsicle({interlaced: true}),
+        //     imagemin.jpegtran({progressive: true}),
+        //     imagemin.optipng({optimizationLevel: 5}),
+        //     imagemin.svgo({
+        //         plugins: [
+        //             {removeViewBox: true},
+        //             {cleanupIDs: false}
+        //         ]
+        //     })
+        // ]))
         .pipe(gulp.dest(paths.images.dest));
 };
 
@@ -125,8 +125,8 @@ function clean() {
 
 //watch
 function watch() {
-  gulp.watch(paths.src + 'scss/*.scss', styles);
-  gulp.watch(paths.src + 'js/*.js', scripts);
+  gulp.watch(paths.src + 'scss/**/*.scss', styles);
+  gulp.watch(paths.src + 'js/main.js', scripts);
   gulp.watch(paths.src + '*.html', htmls);
   gulp.watch(paths.src + '**/*.pug', templates);
   gulp.watch(paths.images.src,images);

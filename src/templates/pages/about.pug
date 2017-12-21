@@ -59,6 +59,11 @@ block content
                                                     circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
                                                     circle.circle__second.circle-15(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
                                                 span.skill__title JavaScript
+                                            li.skills-row__item
+                                                svg.skill__circle(viewBox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circle__second.circle-15(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title jQuery
                     ul.skills-list
                         each item in ['Backend']
                             li.skills-list__item
@@ -75,7 +80,7 @@ block content
                             li.skills-list__item
                                 .skills-row__title #{item}
                                     ul.skills-row__list
-                                        each skill in ['Git', 'Gulp','Sass', 'Npm']
+                                        each skill in ['Git', 'Gulp','Sass', 'Jade']
                                             li.skills-row__item
                                                 svg.skill__circle(viewBox="0 0 110 110")
                                                     circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
@@ -111,13 +116,13 @@ block content
             .footer__up
                 ul.footer-nav
                     li.footer-nav__item
-                        a.footer-nav__link(href='#') Мои работы
+                        a.footer-nav__link(href='my-works.html') Мои работы
                     li.footer-nav__item
-                        a.footer-nav__link(href='#') Обо мне
+                        a.footer-nav__link(href='about.html') Обо мне
                     li.footer-nav__item
-                        a.footer-nav__link(href='#') Блог
+                        a.footer-nav__link(href='blog.html') Блог
                     li.footer-nav__item
-                        a.footer-nav__link(href='#') Авторизация
+                        a.footer-nav__link(href='index.html') Авторизация
                 ul.social
                     li.social__item
                         a.social__link(href='#')

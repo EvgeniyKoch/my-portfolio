@@ -67,14 +67,14 @@
   top:-40px;
   z-index: 5;
   &:before{
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 5px;
-    background-color: rgba(55, 62, 66,.2);
-    top:50%;
-    left:6.625rem;
-  }
+       content: '';
+       position: absolute;
+       width: 20px;
+       height: 5px;
+       background-color: rgba(55, 62, 66,.2);
+       top:50%;
+       left:13.625rem;
+     }
   &:after{
     content: '';
     position: absolute;
@@ -82,7 +82,7 @@
     height: 5px;
     background-color: rgba(55, 62, 66,.2);
     top:50%;
-    right:6.625rem;
+    right:13.625rem;
 
   }
 }
@@ -96,7 +96,7 @@
     height: 4px;
     background-color: rgba(55, 62, 66,.2);
     top:50%;
-    left:9.625rem;
+    left: 12.625rem;
   }
   &:after{
     content: '';
@@ -105,7 +105,7 @@
     height: 4px;
     background-color: rgba(55, 62, 66,.2);
     top:50%;
-    right:9.625rem;
+    right: 12.625rem;
 
   }
 }

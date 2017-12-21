@@ -5,13 +5,12 @@ html(lang='ru')
         title My portfolio
         link(rel='shortcut icon', type='image/x-icon', href='images/favicon/favicon.ico')
         link(rel='stylesheet', href='css/style.min.css')
-        script(src='js/bundle.js', defer='')
     body
         .wrapper
             section.welcome
                 header.head
-                    a.log-in(href='#') Авторизоваться
-                .user
+                    a.log-in(href="#" id="log-in") Авторизоваться
+                .user-front
                     .foto
                         img.foto__user(src='images/img/im.jpg', alt='')
                     .name
@@ -37,4 +36,38 @@ html(lang='ru')
                             a.navigation__link(href='about.html') Обо мне
                         li.navigation__item
                             a.navigation__link(href='blog.html') Блог
+
+                form.user-login
+                    h2.subtitle.subtitle-login Авторизуйтесь
+                    .login
+                        .login__svg
+                        input.login__user(type="text" placeholder="Логин")
+                    .login
+                        .password__svg
+                        input.login__user(type="password" placeholder="Пароль")
+                    .test
+                        label.test__label
+                            input.test__checkbox(type="checkbox" name="checkbox-test")
+                            span.checkbox-custom
+                            span.label-custom Я человек
+                        h3.test__question Вы точно не робот?
+                        .test__radio-button
+                            label.test__label
+                                input.test__radio(type="radio" name="radio-test")
+                                span.radio-custom
+                                span.label-custom Да
+                            label.test__label
+                                input.test__radio(type="radio" name="radio-test")
+                                span.radio-custom
+                                span.label-custom Не уверен
+                    ul.navigation
+                        li.navigation__item
+                            a.navigation__link(href='about.html') На главную
+                        li.navigation__item
+                            a.navigation__link(href='#') Войти
+
+
+
                 p.dev © Евгений Кочетов | создано с любовью в LoftSchool | 2017
+
+        script(src='js/bundle.js')

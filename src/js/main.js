@@ -1,6 +1,23 @@
-var contacts = document.querySelector('.map__contacts');
-//Google-map
+/*global document require*/
+
 var map;
+var login = document.getElementById('log-in');
+var front = document.querySelector('.user-front');
+var back = document.querySelector('.user-login');
+
+//Log-in
+
+login.addEventListener('click',function log() {
+    front.style.cssText='transform: rotateY(180deg) translate(50%,-50%); \
+    backface-visibility: hidden; \
+    transition: 1s; ';
+    back.style.cssText='transform: translate(-50%, -50%); ';
+    this.style.display = 'none';
+})
+
+
+
+//Google-map
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 51.690372, lng: 39.252002},
@@ -183,14 +200,11 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: {lat: 51.697354, lng: 39.269249},
         map: map,
-        title: 'Я',
+        title: 'Евгений',
         icon: '../images/icons/map_marker.svg'
     });
 
-    // marker.addEventListener('click', function() {
-    //     contacts.style.display = 'block';
-    // });
-
 }
+
 
 
