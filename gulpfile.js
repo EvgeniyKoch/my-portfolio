@@ -99,7 +99,7 @@ function fonts() {
 // }
 
 function scripts() {
-    return gulp.src(paths.src + 'js/*.js')
+    return gulp.src(paths.src + 'js/**/*.js')
         .pipe(plumber())
         .pipe(babel({
             presets: ['env']

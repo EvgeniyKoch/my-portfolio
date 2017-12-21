@@ -4,9 +4,10 @@ var map;
 var login = document.getElementById('log-in');
 var front = document.querySelector('.user-front');
 var back = document.querySelector('.user-login');
+var humburger = document.querySelector('.navigation__humburger');
+
 
 //Log-in
-
 login.addEventListener('click',function log() {
     front.style.cssText='transform: rotateY(180deg) translate(50%,-50%); \
     backface-visibility: hidden; \
@@ -14,6 +15,22 @@ login.addEventListener('click',function log() {
     back.style.cssText='transform: translate(-50%, -50%); ';
     this.style.display = 'none';
 })
+
+//hamburgerMenu
+// humburger.addEventListener('click', function () {
+//     if (humburger.classList.contains('navigation__humburger_active')) {
+//         humburger.classList.remove('navigation__humburger_active');
+//         // dropDownMenu.classList.remove('navigation_active');
+//     } else {
+//         humburger.classList.add('navigation__humburger_active');
+//        //  dropDownMenu.classList.add('navigation_active');
+//     }
+// });
+$(humburger).click(function(){
+    $(this).toggleClass('navigation_active');
+});
+
+
 
 
 

@@ -1,5 +1,5 @@
 .header{
-  padding: 20px;
+  padding: 25px;
   display: flex;
   align-items: center;
   justify-content:space-between;
@@ -12,33 +12,29 @@
     transition: .5s;
   }
 }
-.hamburger-menu{
-  display: block;
+.navigation__humburger{
+  display: flex;
+  flex-direction: column;
+}
+.navigation__line{
   width: 40px;
-  height: 2px;
-  &-bars{
-    width: 40px;
-    height: 4px;
-    background: #ffffff;
-    position: relative;
-    border-radius: 5px;
-    &:before{
-      content: '';
-      position: absolute;
-      width: 40px;
-      height: 4px;
-      background: #ffffff;
-      top:10px;
-      border-radius: 5px;
-    }
-    &:after{
-      content: '';
-      position: absolute;
-      width: 40px;
-      height: 4px;
-      background: #ffffff;
-      top:-10px;
-      border-radius: 5px;
-    }
+  height: 4px;
+  background: #fff;
+  border-radius:3px;
+  margin-bottom: 10px;
+  transition: .5s;
+  &:last-child span{
+    margin-bottom:0;
   }
+}
+.navigation__humburger_active .navigation__line:nth-child(2n+0) {
+  opacity: 0;
+}
+
+.navigation__humburger_active .navigation__line:first-child {
+  transform: rotate(45deg) translateY(20px) ;
+}
+
+.navigation__humburger_active .navigation__line:last-child {
+  transform:rotate(-43deg) translateY(-19px);
 }
