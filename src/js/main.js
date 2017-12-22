@@ -1,36 +1,39 @@
-/*global document require*/
+
 
 var map;
 var login = document.getElementById('log-in');
 var front = document.querySelector('.user-front');
 var back = document.querySelector('.user-login');
-var humburger = document.querySelector('.navigation__humburger');
+var humburger = document.getElementById('navigation__humburger');
+var dropDownMenu = document.querySelector(".menu");
+var dropDownMenuLeft = document.querySelector(".drop-left");
+var dropDownMenuRight = document.querySelector(".drop-right");
 
 
-//Log-in
-login.addEventListener('click',function log() {
-    front.style.cssText='transform: rotateY(180deg) translate(50%,-50%); \
-    backface-visibility: hidden; \
-    transition: 1s; ';
-    back.style.cssText='transform: translate(-50%, -50%); ';
-    this.style.display = 'none';
-})
-
-//hamburgerMenu
-// humburger.addEventListener('click', function () {
-//     if (humburger.classList.contains('navigation__humburger_active')) {
-//         humburger.classList.remove('navigation__humburger_active');
-//         // dropDownMenu.classList.remove('navigation_active');
-//     } else {
-//         humburger.classList.add('navigation__humburger_active');
-//        //  dropDownMenu.classList.add('navigation_active');
-//     }
-// });
-$(humburger).click(function(){
-    $(this).toggleClass('navigation_active');
-});
-
-
+// hamburgerMenu
+if(login) {
+    login.addEventListener('click', function () {
+        front.style.cssText = 'transform: rotateY(180deg) translate(50%,-50%); \
+        backface-visibility: hidden; \
+        transition: 1s; ';
+        back.style.cssText = 'transform: translate(-50%, -50%);  ';
+        login.style.display = 'none';
+    });
+}else {
+    humburger.addEventListener('click', () => {
+        if (humburger.classList.contains('navigation__humburger_active')) {
+            humburger.classList.remove('navigation__humburger_active');
+            dropDownMenu.classList.remove("menu_active");
+            dropDownMenuLeft.classList.remove("drop-left_active");
+            dropDownMenuRight.classList.remove("drop-right_active");
+        } else {
+            humburger.classList.add('navigation__humburger_active');
+            dropDownMenu.classList.add("menu_active");
+            dropDownMenuLeft.classList.add("drop-left_active");
+            dropDownMenuRight.classList.add("drop-right_active");
+        }
+    });
+}
 
 
 
