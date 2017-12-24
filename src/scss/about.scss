@@ -54,8 +54,8 @@
     left: 0;
     height: 100%;
     width: 100%;
-    bottom: 50%;
-    opacity:0.2;
+    bottom: 25%;
+    opacity:0.1;
     background: url("../images/icons/about_header.svg")no-repeat;
     z-index: 5;
   }
@@ -64,16 +64,16 @@
   @include title;
   color: #373e42;
   position: relative;
-  top:-40px;
   z-index: 5;
+  min-height: 150px;
   &:before{
        content: '';
        position: absolute;
        width: 20px;
        height: 5px;
        background-color: rgba(55, 62, 66,.2);
-       top:50%;
-       left:13.625rem;
+      top: 38px;
+      right: 10.625rem;
      }
   &:after{
     content: '';
@@ -81,9 +81,8 @@
     width: 20px;
     height: 5px;
     background-color: rgba(55, 62, 66,.2);
-    top:50%;
-    right:13.625rem;
-
+    top: 38px;
+    left: 10.625rem;
   }
 }
 .block-subtitle{

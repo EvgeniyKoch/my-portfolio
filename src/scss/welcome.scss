@@ -1,10 +1,13 @@
 .welcome {
-  height: 100vh;
   min-height: 40.625rem;
-  background: url("../images/background/mount_bg.jpg") right bottom no-repeat;
+  background: url("../images/background/bg_welcome.png")no-repeat;
   background-size: cover;
-  position: relative;
-
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  right: -100px;
+  bottom: 0;
+  overflow:hidden;
 }
 
 .head {
@@ -43,7 +46,12 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 35px;
-  border-bottom: none;
+
+  //&_active{
+  //  transform: rotateY(180deg) translate(50%,-50%);
+  //  backface-visibility: hidden;
+  //  transition: 1s;
+  //}
 }
 
 .foto {
@@ -98,6 +106,7 @@
     border-bottom: none;
     background: $aquamarine;
     transition: .5s;
+    margin-bottom: -1px;
     &:hover {
       cursor: pointer;
       background: #159689;
@@ -134,6 +143,9 @@
   backface-visibility: hidden;
   transform:rotateY(180deg) translate(50%,-50%);
   transition: 1s;
+  //&_active{
+  //  transform: translate(-50%, -50%);
+  //}
 }
 .subtitle-login{
   position: relative;
@@ -225,6 +237,10 @@
   border-radius: 3px;
   position: relative;
   display: inline-block;
+}
+.checkbox-custom{
+  width: 25px;
+  height: 25px;
 }
 .label-custom{
   display: inline-block;

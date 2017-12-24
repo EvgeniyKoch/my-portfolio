@@ -1,7 +1,9 @@
 .blog{
-  @extend .welcome;
-  background:url("../images/background/blog_bg.jpg")center bottom no-repeat;
-  background-size:cover;
+  min-height: 40.625rem;
+  background: url("../images/background/portfolio_bg.png") bottom center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .user-blog{
@@ -10,13 +12,14 @@
   justify-content:center;
   text-align: center;
   align-items:center;
-  position: relative;
+  position: absolute;
+  @include center;
   &:after{
     content:'';
     position: absolute;
      width: 290px;
     height: 200px;
-    background:url("../images/icons/blog_header.svg");
+    background:url("../images/icons/blog_header.svg")no-repeat;
     opacity: 0.1;
     top: 50%;
   }

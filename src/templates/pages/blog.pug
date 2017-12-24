@@ -11,9 +11,9 @@ html(lang='ru')
     body
         .wrapper
             .container
-                section.section.blog
+                section.section.blog(data-type="background" data-speed="10")
                     include ../common/header
-                    .user-blog
+                    .user-blog(data-type="background" data-speed="10")
                         .foto
                             img.foto__user(src='images/img/im.jpg', alt='i')
                         .user-name
@@ -87,4 +87,5 @@ html(lang='ru')
                             img.code__img(src='images/img/html.jpg', alt='code')
                             p.article__text
             include ../common/footer
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(src='js/bundle.js')

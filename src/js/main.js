@@ -8,11 +8,83 @@ var humburger = document.getElementById('navigation__humburger');
 var dropDownMenu = document.querySelector(".menu");
 var dropDownMenuLeft = document.querySelector(".drop-left");
 var dropDownMenuRight = document.querySelector(".drop-right");
+var body = document.getElementsByTagName('body');
+var $window = $(window);
 
+$('body').parallax({
+    'elements': [
+        {
+            'selector': 'section.welcome',
+            'properties': {
+                'x': {
+                    'background-position-x': {
+                        'initial': 0,
+                        'multiplier': 0.1,
+                        'invert': true
+                    }
+                },
+                'y': {
+                    'background-position-y': {
+                        'initial': 0,
+                        'multiplier': 0.1,
+                        'invert': true
+                    }
+                }
+            }
+        },
+
+        {
+            'selector': 'div.user-front',
+            'properties': {
+                'x': {
+                    'background-position-x': {
+                        'initial': 0,
+                        'multiplier': 0.3
+                    }
+                },
+                'y': {
+                    'background-position-y': {
+                        'initial': 0,
+                        'multiplier': 0.3
+                    }
+                }
+            }
+        }
+    ]
+});
+
+//Parallax Scrolling
+$(document).ready(function(){
+    $('section[data-type="background"]').each(function(){
+        var $bgobj = $(this); // создаем объект
+        $(window).scroll(function() {
+            var yPos = -($window.scrollTop() / $bgobj.data('speed')); // вычисляем коэффициент
+            // Присваиваем значение background-position
+            var coords = 'center '+ yPos + 'px';
+            // Создаем эффект Parallax Scrolling
+            $bgobj.css({ backgroundPosition: coords });
+        });
+    });
+});
 
 // hamburgerMenu
 if(login) {
     login.addEventListener('click', function () {
+        // if(front.classList.contains('user-front_active') && back.classList.contains('user-login_active')){
+        //     body.addEventListener('click',()=>{
+        //     front.classList.remove('user-front_active');
+        //     back.classList.remove('user-login_active');
+        //     login.style.display = 'block';
+        //     })
+        // }else{
+        //     login.addEventListener('click',()=>{
+        //         front.classList.add('user-front_active');
+        //         back.classList.add('user-login_active');
+        //         login.style.display = 'none';
+        //     })
+        //
+        // }
+
         front.style.cssText = 'transform: rotateY(180deg) translate(50%,-50%); \
         backface-visibility: hidden; \
         transition: 1s; ';

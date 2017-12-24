@@ -99,7 +99,7 @@ function fonts() {
 // }
 
 function scripts() {
-    return gulp.src(paths.src + 'js/**/*.js')
+    return gulp.src(paths.src + 'js/*.js')
         .pipe(plumber())
         .pipe(babel({
             presets: ['env']
@@ -126,7 +126,7 @@ function clean() {
 //watch
 function watch() {
   gulp.watch(paths.src + 'scss/**/*.scss', styles);
-  gulp.watch(paths.src + 'js/main.js', scripts);
+  gulp.watch(paths.src + 'js/*.js', scripts);
   gulp.watch(paths.src + '*.html', htmls);
   gulp.watch(paths.src + '**/*.pug', templates);
   gulp.watch(paths.images.src,images);
