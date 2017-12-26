@@ -1,5 +1,3 @@
-
-
 var map;
 var login = document.getElementById('log-in');
 var front = document.querySelector('.user-front');
