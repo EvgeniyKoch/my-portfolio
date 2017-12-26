@@ -8,7 +8,7 @@ var dropDownMenuLeft = document.querySelector(".drop-left");
 var dropDownMenuRight = document.querySelector(".drop-right");
 var body = document.getElementsByTagName('body');
 var $window = $(window);
-var sideBarButton = document.querySelector('.saidbar__item');
+
 
 
 
@@ -25,13 +25,25 @@ var sideBarButton = document.querySelector('.saidbar__item');
 //         $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
 //     }
 // });
-sideBarButton.addEventListener('click',() => {
-    if(sideBarButton.classList.contains('saidbar__item-active')){
-        sideBarButton.classList.remove('saidbar__item-active');
-    }else{
-        sideBarButton.classList.add('saidbar__item-active');
-    }
-})
+
+
+//SideBar
+var $item = document.getElementsByClassName('saidbar__item'),
+    activeItem = 'saidbar__item-active';
+
+for (var i = 0; i < $item.length; i++) {
+    $item[i].addEventListener('click', function() {
+        if(!(this.classList.contains(activeItem))) {
+            for (var j = 0; j < $item.length; j++) {
+                $item[j].classList.remove(activeItem);
+                this.classList.add(activeItem);
+            }
+        } else {
+            this.classList.remove(activeItem);
+        }
+    })
+}
+
 
 // hamburgerMenu
 if(login) {
@@ -291,5 +303,3 @@ $(document).ready(function(){
         });
     });
 });
-
-
