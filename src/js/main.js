@@ -8,25 +8,34 @@ var dropDownMenuLeft = document.querySelector(".drop-left");
 var dropDownMenuRight = document.querySelector(".drop-right");
 var body = document.getElementsByTagName('body');
 var $window = $(window);
+var sideBarButton = document.querySelector('.saidbar__item');
 
+
+
+
+//SIDEBAR
+// $('sideBarButton').on('click', event => {
+//     event.preventDefault();
+//
+//     const $this = $(event.currentTarget); //Элемент по которому тыкаем
+//     let scroll_el = $this.attr('#article2'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+//
+//     if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+//
+//         $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
+//     }
+// });
+sideBarButton.addEventListener('click',() => {
+    if(sideBarButton.classList.contains('saidbar__item-active')){
+        sideBarButton.classList.remove('saidbar__item-active');
+    }else{
+        sideBarButton.classList.add('saidbar__item-active');
+    }
+})
 
 // hamburgerMenu
 if(login) {
     login.addEventListener('click', function () {
-        // if(front.classList.contains('user-front_active') && back.classList.contains('user-login_active')){
-        //     body.addEventListener('click',()=>{
-        //     front.classList.remove('user-front_active');
-        //     back.classList.remove('user-login_active');
-        //     login.style.display = 'block';
-        //     })
-        // }else{
-        //     login.addEventListener('click',()=>{
-        //         front.classList.add('user-front_active');
-        //         back.classList.add('user-login_active');
-        //         login.style.display = 'none';
-        //     })
-        //
-        // }
 
         front.style.cssText = 'transform: rotateY(180deg) translate(50%,-50%); \
         backface-visibility: hidden; \
@@ -38,14 +47,14 @@ if(login) {
     humburger.addEventListener('click', () => {
         if (humburger.classList.contains('navigation__humburger_active')) {
             humburger.classList.remove('navigation__humburger_active');
-            dropDownMenu.classList.remove("menu_active");
-            dropDownMenuLeft.classList.remove("drop-left_active");
-            dropDownMenuRight.classList.remove("drop-right_active");
+            dropDownMenu.classList.remove('menu_active');
+            dropDownMenuLeft.classList.remove('drop-left_active');
+            dropDownMenuRight.classList.remove('drop-right_active');
         } else {
             humburger.classList.add('navigation__humburger_active');
-            dropDownMenu.classList.add("menu_active");
-            dropDownMenuLeft.classList.add("drop-left_active");
-            dropDownMenuRight.classList.add("drop-right_active");
+            dropDownMenu.classList.add('menu_active');
+            dropDownMenuLeft.classList.add('drop-left_active');
+            dropDownMenuRight.classList.add('drop-right_active');
         }
     });
 }

@@ -29,22 +29,22 @@ html(lang='ru')
                 section.section.main-blog(id="main-blog")
                     aside.saidbar
                         ul.saidbar__list
-                            li.saidbar__item.saidbar__item-active
-                                a.saidbar__link(href='#')
+                            li.saidbar__item
+                                a.saidbar__link(href="#")
                                     | Самое важное в
                                     | SASS
                             li.saidbar__item
-                                a.saidbar__link(href='#')
+                                a.saidbar__link(href="#")
                                     | Приёмы в вёрстке, без которых не
                                     | обходится ни один сайт
                             li.saidbar__item
-                                a.saidbar__link(href='#')
+                                a.saidbar__link(href="#")
                                     | Самый необходимый набор Gulp
                                     | плагинов
                             li.saidbar__item
-                                a.saidbar__link(href='#') Почему я выбрал Jade
+                                a.saidbar__link(href="#") Почему я выбрал Jade
                     .articles
-                        article.article
+                        article.article(id="article1")
                             h2.subtitle Самое важное в SASS
                             p.article__data
                                 time.data__time 22 ноября 2016
@@ -54,7 +54,7 @@ html(lang='ru')
                                 | Начнем с того, что именно SASS используют многие гиганты IT, как eBay, BBC, Instagram, LinkedIn, Groupon и т.д. Почему? Потому, что scss -это по сути будущее css, переменные (уже поддерживаются браузерами), миксины и вообще все фишки препроцессора в скором (относительно) времени будут доступны в css.
                                 | Правильная архитектура Sass имеет решающее значение для создания поддерживаемого, масштабируемого и хорошо организованного проекта. Sass упрощает разделение вашего проекта на логические модули с помощью директивы @import, которая отличается от нативного @import в CSS тем, что подключает файлы .scss и .sass перед генерацией CSS.
                             img.code__img(src='images/img/scss.jpg', alt='code')
-                        article.article
+                        article.article(id="article2")
                             h2.subtitle Приёмы в вёрстке, без которых не обходится ни один сайт
                             p.article__data
                                 time.data__time 11 ноября 2017
@@ -62,7 +62,7 @@ html(lang='ru')
                                 | Вёрстка веб-страниц — это не просто знание приёмов и хитростей создания различных эффектов. Это умение предугадывать результат действий с элементами веб-страниц и понимание особенностей различных браузеров, которые могут по-разному отображать сайт. Деятельность разработчика сайта сродни работе шеф-повара, который точно знает, какие ингредиенты и в каком количестве нужно положить, чтобы улучшить вкус готового блюда.
                                 | Тектс.Красиво и элегантно оформленный текст может лучше передать задумку автора и привлечь к себе внимание. К тому же с таким текстом приятнее работать, он лучше воспринимается, и пользователи это ценят
                                 |
-                        article.article
+                        article.article(id="article3")
                             h2.subtitle Самый необходимый набор Gulp плагинов
                             p.article__data
                                 time.data__time 3 декабря 2017
@@ -75,7 +75,7 @@ html(lang='ru')
                             p.article__text gulp-concat объединение файлов
                             p.article__text gulp-uglify сжатие файла
                             p.article__text gulp-pug компиляция PUG в HTML
-                        article.article
+                        article.article(id="article4")
                             h2.subtitle Почему я выбрал Jade(Pug)
                             p.article__data
                                 time.data__time 20 декабря 2017
