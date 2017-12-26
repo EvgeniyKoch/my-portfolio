@@ -9,61 +9,6 @@ var dropDownMenuRight = document.querySelector(".drop-right");
 var body = document.getElementsByTagName('body');
 var $window = $(window);
 
-$('body').parallax({
-    'elements': [
-        {
-            'selector': 'section.welcome',
-            'properties': {
-                'x': {
-                    'background-position-x': {
-                        'initial': 0,
-                        'multiplier': 0.1,
-                        'invert': true
-                    }
-                },
-                'y': {
-                    'background-position-y': {
-                        'initial': 0,
-                        'multiplier': 0.1,
-                        'invert': true
-                    }
-                }
-            }
-        },
-
-        {
-            'selector': 'div.user-front',
-            'properties': {
-                'x': {
-                    'background-position-x': {
-                        'initial': 0,
-                        'multiplier': 0.3
-                    }
-                },
-                'y': {
-                    'background-position-y': {
-                        'initial': 0,
-                        'multiplier': 0.3
-                    }
-                }
-            }
-        }
-    ]
-});
-
-//Parallax Scrolling
-$(document).ready(function(){
-    $('section[data-type="background"]').each(function(){
-        var $bgobj = $(this); // создаем объект
-        $(window).scroll(function() {
-            var yPos = -($window.scrollTop() / $bgobj.data('speed')); // вычисляем коэффициент
-            // Присваиваем значение background-position
-            var coords = 'center '+ yPos + 'px';
-            // Создаем эффект Parallax Scrolling
-            $bgobj.css({ backgroundPosition: coords });
-        });
-    });
-});
 
 // hamburgerMenu
 if(login) {
@@ -296,5 +241,46 @@ function initMap() {
 
 }
 
+
+
+//Parallax
+var parallaxContainer = document.getElementById('parallax');
+var layers = parallaxContainer.children;
+
+var moveLayers = function (e) {
+    var initialX = (window.innerWidth / 2) - e.pageX;
+    var initialY = (window.innerHeight / 2) - e.pageY;
+
+    [].slice.call(layers).forEach(function(layer, index) {
+        var
+            divider = index / 40,
+            positionX = initialX * divider,
+            positionY = initialY * divider,
+            bottomPosition = (window.innerHeight / 2) * divider,
+            transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
+            image = layer.firstElementChild;
+
+        layer.style.transform = transformString;
+        image.style.bottom = '-' + bottomPosition + 'px';
+
+    });
+
+};
+
+window.addEventListener('mousemove', moveLayers);
+
+//Parallax Scrolling
+$(document).ready(function(){
+    $('section[data-type="background"]').each(function(){
+        var $bgobj = $(this); // создаем объект
+        $(window).scroll(function() {
+            var yPos = -($window.scrollTop() / $bgobj.data('speed')); // вычисляем коэффициент
+            // Присваиваем значение background-position
+            var coords = 'center '+ yPos + 'px';
+            // Создаем эффект Parallax Scrolling
+            $bgobj.css({ backgroundPosition: coords });
+        });
+    });
+});
 
 
