@@ -1,0 +1,95 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        title My portfolio
+        link(rel='shortcut icon', type='image/x-icon', href='images/favicon/favicon.ico')
+        link(rel='stylesheet', href='css/style.min.css')
+    body
+        .wrapper
+            section.welcome
+                .parallax(id="parallax")
+                    .parallax__layer
+                        img.parallax__img(src="images/parallax/Layer5.png")
+                    .parallax__layer
+                        img.parallax__img(src="images/parallax/Layer8.png")
+                    .parallax__layer
+                        img.parallax__img(src="images/parallax/Layer7.png")
+                    .parallax__layer
+                        img.parallax__img.parallax__img-sky2(src="images/parallax/cloud_PNG4.png")
+                    .parallax__layer
+                        img.parallax__img(src="images/parallax/Layer6.png")
+                    .parallax__layer
+                        img.parallax__img(src="images/parallax/Layer4.png")
+                    .parallax__layer
+                        img.parallax__img.parallax__img-sky1(src="images/parallax/sky.png")
+                    .parallax__layer
+                        img.parallax__img(src="images/parallax/Layer2.png")
+                    .parallax__layer
+                        img.parallax__img(src="images/parallax/Layer1.png")
+                    .parallax__layer
+                        img.parallax__img.parallax__img-sky(src="images/parallax/cloud_PNG5.png")
+
+                header.head
+                    a.log-in(href="#" id="log-in") Авторизоваться
+                .user-front
+                    .foto
+                        img.foto__user(src='images/img/im.jpg', alt='')
+                    .name
+                        p.name__user Кочетов Евгений
+                        p.name__description Личный сайт веб разработчика
+                    ul.social
+                        li.social__item
+                            a.social__link(href='#')
+                                svg.social__icon(viewbox='0 0 50 50', width='35', height='40')
+                                    use(xlink:href='images/icons/sprite.svg#vk')
+                        li.social__item
+                            a.social__link(href='#')
+                                svg.social__icon(viewbox='0 0 50 50', width='32', height='37')
+                                    use(xlink:href='images/icons/sprite.svg#github')
+                        li.social__item
+                            a.social__link(href='#')
+                                svg.social__icon(viewbox='0 0 50 50', width='30', height='30')
+                                    use(xlink:href='images/icons/sprite.svg#in')
+                    ul.navigation
+                        li.navigation__item
+                            a.navigation__link(href='my-works.html') Мои работы
+                        li.navigation__item
+                            a.navigation__link(href='about.html') Обо мне
+                        li.navigation__item
+                            a.navigation__link(href='blog.html') Блог
+
+                form.user-login
+                    h2.subtitle.subtitle-login Авторизуйтесь
+                    .login
+                        .login__svg
+                        input.login__user(type="text" placeholder="Логин")
+                    .login
+                        .password__svg
+                        input.login__user(type="password" placeholder="Пароль")
+                    .test
+                        label.test__label
+                            input.test__checkbox(type="checkbox" name="checkbox-test")
+                            span.checkbox-custom
+                            span.label-custom Я человек
+                        h3.test__question Вы точно не робот?
+                        .test__radio-button
+                            label.test__label
+                                input.test__radio(type="radio" name="radio-test")
+                                span.radio-custom
+                                span.label-custom Да
+                            label.test__label
+                                input.test__radio(type="radio" name="radio-test")
+                                span.radio-custom
+                                span.label-custom Не уверен
+                    ul.navigation
+                        li.navigation__item
+                            a.navigation__link(href='about.html') На главную
+                        li.navigation__item
+                            a.navigation__link(href='#') Войти
+
+
+
+                p.dev © Евгений Кочетов | создано с любовью в LoftSchool | 2017
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src='js/bundle.js')

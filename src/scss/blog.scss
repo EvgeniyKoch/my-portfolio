@@ -1,0 +1,142 @@
+.blog{
+  min-height: 40.625rem;
+  background: url("../images/background/portfolio_bg.png") bottom center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.user-blog{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align: center;
+  align-items:center;
+  position: absolute;
+  @include center;
+  &:after{
+    content:'';
+    position: absolute;
+     width: 290px;
+    height: 200px;
+    background:url("../images/icons/blog_header.svg")no-repeat;
+    opacity: 0.1;
+    top: 50%;
+  }
+}
+.user-name{
+  margin-top:50px;
+}
+.title-blog{
+  @include title;
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(255, 255, 255,0.5);
+    top:50%;
+    left:10px;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: rgba(255, 255, 255,0.5);
+    top:50%;
+    right:10px;
+  }
+}
+.user__text{
+  @include roboto;
+}
+.arrow-scroll{
+  display: block;
+  position: absolute;
+  right: 49%;
+  top:70%;
+  @include smartTV{
+    top:80%;
+  }
+}
+.icon__scroll{
+  fill:#bfced5;
+}
+.about__triangle-blog{
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+}
+.main-blog{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.saidbar{
+  padding: 3.125rem;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 50px;
+    text-align: right;
+  }
+  &__item{
+    margin-bottom:35px;
+    &-active{
+      .saidbar__link{
+        @include robotobold;
+        color:#00bfa5;
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 55px;
+          background: #00bfa5;
+          right: -15px;
+          top: -9px;
+        }
+      }
+
+    }
+  }
+  &__link{
+    display: block;
+    @include robotoreg;
+  }
+}
+.articles{
+  width: 65%;
+  padding:3.125rem;
+}
+.article{
+ border-bottom: 4px solid #f1f1f2;
+  padding-bottom: 65px;
+  margin-bottom: 65px;
+}
+.subtitle{
+  @include subtitle;
+  margin-bottom: 30px;
+}
+.article__data{
+  margin-bottom: 30px;
+}
+.data__time{
+  @include robotoreg;
+  color: #00bfa5;
+}
+.article__text{
+  @include robotoreg;
+  margin-bottom:20px;
+}
+.code{
+  width:100%;
+  &__img{
+    max-width: 100%;
+  }
+}

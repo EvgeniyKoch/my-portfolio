@@ -1,0 +1,115 @@
+.header{
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin-bottom:30px;
+  position: relative;
+}
+.social__icon_head{
+  fill: #c0d6d5;
+  &:hover{
+    fill: #ffffff;
+    transition: .5s;
+  }
+}
+
+.navigation__humburger{
+  display: flex;
+  flex-direction: column;
+  z-index: 11;
+}
+.navigation__line{
+  width: 40px;
+  height: 4px;
+  background: #fff;
+  border-radius:3px;
+  margin-bottom: 10px;
+  transition: .5s;
+  &:last-child span{
+    margin-bottom:0;
+  }
+}
+.navigation__humburger_active .navigation__line:nth-child(2n+0) {
+  opacity: 0;
+  transition: .1s;
+}
+.navigation__humburger_active .navigation__line:first-child {
+  transform: rotate(45deg) translateY(20px) ;
+}
+.navigation__humburger_active .navigation__line:last-child {
+  transform:rotate(-43deg) translateY(-19px);
+}
+
+.menu{
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+ @include center;
+  &_active{
+    position: fixed;
+    @include center;
+    opacity: 1;
+    visibility: visible;
+    transition: 1.6s;
+    z-index: 10;
+  }
+  &__list{
+    text-align: center;
+  }
+  &__item{
+    margin-bottom:40px;
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+  &__link{
+    @include title;
+    position: relative;
+    &:hover:before{
+      content: "";
+      height: 5px;
+      width: 20px;
+      top: 2.25rem;
+      left: -2.5rem;
+      background: $white;
+      position: absolute;
+    }
+    &:hover:after{
+      content: "";
+      height: 5px;
+      width: 20px;
+      top: 2.25rem;
+      right: -2.5rem;
+      background: $white;
+      position: absolute;
+    }
+  }
+}
+.drop-left {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width:0;
+  background:rgba($aquamarine,.9);
+  z-index: 9;
+  transition: .3s;
+  &_active {
+    width: 50%;
+  }
+}
+  .drop-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+    width:0;
+  background:rgba($aquamarine,.9);
+  z-index: 9;
+  transition: .3s;
+  &_active{
+    width: 50%;
+
+  }
+}

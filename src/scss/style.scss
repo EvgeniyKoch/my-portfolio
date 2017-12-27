@@ -1,4 +1,14 @@
-@import 'variables.scss';
-@import 'mixins/*.scss';
-
-@import 'global.scss';
+//setup
+@import 'technologies/variables';
+@import 'technologies/mixins';
+@import  'common/font';
+//normalize
+@import 'technologies/normalize';
+@import   'technologies/reset';
+//section
+@import "common/header";
+@import 'welcome';
+@import "blog";
+@import "about";
+@import "my-works";
+@import "common/footer";
