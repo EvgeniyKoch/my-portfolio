@@ -42,6 +42,54 @@
 .carousel{
   height: 100vh;
 }
+.content__works{
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  &-left{
+    background: #f0efe9;
+    width: 50%;
+  }
+  &-right{
+    width: 50%;
+
+  }
+}
+.slider{
+  //font-size:0;
+  &__main_slide{
+    height: 100px;
+    width: 100px;
+    background:red;
+
+  }
+
+  &__up_slide{
+    height: 50px;
+    width: 50px;
+    background: green;
+    display: inline-block;
+
+  }
+  &__down_slide{
+    height: 50px;
+    width: 50px;
+    background: blue;
+    display: inline-block;
+
+  }
+  //&__description{
+  //  font-size: 12px;
+  //}
+}
+
+
+
+
+
+
+
+
 
 
 
