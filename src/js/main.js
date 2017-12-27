@@ -8,12 +8,6 @@ var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
-<<<<<<< HEAD
-console.log( `Hello ${name}, ready for ${place}?` );
-
-=======
-
-
 
 
 
@@ -297,7 +291,7 @@ $(document).ready(function(){
 
 
 // Carousel
-if(slider) {
+
     var slides = [
         {
             title: 'Сайт школы онлайн образования',
@@ -364,10 +358,9 @@ if(slider) {
         } else {
             return value;
         }
-    }
+
 
 // img = document.createElement('img');
 // img.setAttribute('src', slides[0].image);
 // mainSlide.appendChild(img);
 }
->>>>>>> week_3
