@@ -29,6 +29,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .container{
   flex:1;

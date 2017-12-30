@@ -8,10 +8,9 @@
     border-bottom:4px solid #666c6e;
     @include tablets{
       flex-direction:column;
-    }
-    @include iphone5{
       padding: .625rem 1.125rem;
     }
+
   }
   &-nav{
     display: flex;
@@ -41,8 +40,6 @@
     @include tablets{
       flex-direction:column;
       text-align: center;
-    }
-    @include iphone5{
       padding: 0.625rem 0.125rem;
     }
   }

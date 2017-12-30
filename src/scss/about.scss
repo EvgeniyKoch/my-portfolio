@@ -201,7 +201,7 @@
   }
   &:before{
     @include phones{
-      left: 24.625rem;
+      display: none;
     }
     @include iphone5{
       left: 15.625rem;
@@ -209,7 +209,7 @@
   }
   &:after{
     @include phones{
-      right: 24.625rem;
+      display: none;
     }
     @include iphone5{
       right: 15.625rem;
@@ -348,7 +348,7 @@
 
 }
 .map__contacts{
-  width: 377px;
+  width: 22.5625rem;
   height: 293px;
   background-color: rgba(252, 252, 252,.85);
   position: absolute;
