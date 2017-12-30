@@ -9,6 +9,9 @@
     @include tablets{
       flex-direction:column;
     }
+    @include iphone5{
+      padding: .625rem 1.125rem;
+    }
   }
   &-nav{
     display: flex;
@@ -18,6 +21,9 @@
     @include tablets{
       width: 80%;
       margin-bottom:10px;
+    }
+    @include phones{
+      width: 100%;
     }
     &__link{
       font:16px/1.62 'robotomedium';
@@ -35,6 +41,9 @@
     @include tablets{
       flex-direction:column;
       text-align: center;
+    }
+    @include iphone5{
+      padding: 0.625rem 0.125rem;
     }
   }
   &__description{
