@@ -160,12 +160,12 @@ gulp.task('build', gulp.series(
   // styles,
   // scripts,
   // htmls
-  gulp.parallel(styles, scripts, htmls,templates)
+  gulp.parallel(styles, htmls,templates,scripts)
 ));
 
 //Запуск
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(styles, scripts, htmls,templates,images,fonts),
+  gulp.parallel(styles, htmls,templates,images,fonts,scripts),
   gulp.parallel(watch, serve)
 ));

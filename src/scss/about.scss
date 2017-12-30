@@ -27,22 +27,47 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  @include tablets{
+    flex-direction:column;
+  }
   &__triangle{
     position: absolute;
     bottom:0;
     left: 0;
     right:0;
+    @include tablets{
+      bottom: -2px;
+    }
+    &_right{
+      @include tablets{
+        fill:#efeee9;
+      }
+    }
+    &_left{
+      @include tablets{
+        fill:#efeee9;
+      }
+    }
   }
   &__left{
     width: 50%;
     background: #efeee9;
     padding:0 75px;
     text-align: center;
+    @include tablets{
+      width:100%;
+    }
+    @include phones{
+      padding: 0 1.6875rem;
+    }
   }
   &__right{
     width: 50%;
     background: #eeebdf;
     padding:0 5px 0 35px;
+    @include tablets{
+      width:100%;
+    }
   }
 }
 .about__left_title{
@@ -66,6 +91,9 @@
   position: relative;
   z-index: 5;
   min-height: 150px;
+  @include tablets {
+    margin-top:2.625rem;
+  }
   &:before{
        content: '';
        position: absolute;
@@ -73,7 +101,13 @@
        height: 5px;
        background-color: rgba(55, 62, 66,.2);
       top: 38px;
-      right: 10.625px;
+      right: 10px;
+    @include tablets{
+      right: 7.625rem;
+    }
+    @include phones{
+      right:5.625rem;;
+    }
   }
   &:after{
     content: '';
@@ -83,6 +117,12 @@
     background-color: rgba(55, 62, 66,.2);
     top: 38px;
     left: 10.625rem;
+    @include tablets{
+      left:7.625rem;
+    }
+    @include phones{
+      left: 5.625rem;;
+    }
   }
 }
 .block-subtitle{
@@ -96,6 +136,9 @@
     background-color: rgba(55, 62, 66,.2);
     top:50%;
     left: 12.625rem;
+    @include phones{
+      left: 17.625rem;;
+    }
   }
   &:after{
     content: '';
@@ -105,17 +148,23 @@
     background-color: rgba(55, 62, 66,.2);
     top:50%;
     right: 12.625rem;
+    @include phones{
+      right: 17.625rem;;
+    }
 
   }
 }
 .user-description{
 
   &__image{
-    width: 440px;
-    height: 300px;
+    //width: 440px;
+    //height: 300px;
     overflow: hidden;
     margin-bottom:40px ;
-  }
+    @include tablets{
+      width: 100%;
+    }
+   }
   &__avatar{
     max-width:100%;
   }
@@ -129,6 +178,7 @@
 }
 .text-content p{
   @include robotoreg;
+  margin-bottom:40px;
 }
 .text-content p:first-child{
   margin-bottom: 10px;
@@ -143,6 +193,22 @@
   padding: 0 170px;
   text-align: center;
   bottom:2%;
+  @include tablets{
+    padding:40px 11.625rem;;
+  }
+  @include phones{
+    padding: 1.5rem 5.625rem;
+  }
+  &:before{
+    @include phones{
+      left: 24.625rem;
+    }
+  }
+  &:after{
+    @include phones{
+      right: 24.625rem;
+    }
+  }
 }
 
 //--------------------SKILLS------------------------------------------
@@ -150,16 +216,26 @@
   font: 28px/1.625rem 'robotomedium';
   color: #455a64;
   margin:50px 0 50px 0;
+  @include tablets{
+    text-align: center;
+  }
 }
 .skills-row__list{
   display: flex;
   align-items:center;
   justify-content: space-around;
+  @include phones{
+    flex-wrap: wrap;
+  }
 }
 
 .skills-row__item {
   fill: none;
   stroke-width: 15;
+  @include phones{
+    width: 9.625rem;
+    height: 9.625rem;
+  }
 }
 .circle__first {
   stroke: #dfdcd5;
@@ -275,6 +351,9 @@
   padding:35px;
   border-radius:5px;
   //display: none;
+  @include tablets{
+    top: 30%;
+  }
 }
 .contacts-subtitle{
   &:before{

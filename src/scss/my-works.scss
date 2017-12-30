@@ -55,33 +55,6 @@
 
   }
 }
-.slider{
-  //font-size:0;
-  &__main_slide{
-    height: 100px;
-    width: 100px;
-    background:red;
-
-  }
-
-  &__up_slide{
-    height: 50px;
-    width: 50px;
-    background: green;
-    display: inline-block;
-
-  }
-  &__down_slide{
-    height: 50px;
-    width: 50px;
-    background: blue;
-    display: inline-block;
-
-  }
-  //&__description{
-  //  font-size: 12px;
-  //}
-}
 
 
 
@@ -151,9 +124,10 @@
     color: #20b5a1;
   }
 }
+//----------------------Blur-------------------------------------------
+
 .block-form{
   margin:0 auto;
-  background:url("../images/background/bg_blur.png")center top no-repeat;
   width: 380px;
   padding:30px 15px 0 15px;
   border-top-left-radius: 5px;
@@ -166,6 +140,10 @@
   flex-direction:column;
   justify-content: space-between;
   align-items:center;
+  position: relative;
+  z-index: 2;
+  background:url("../images/background/bg_blur.png")center no-repeat;
+  border-radius: 10px;
 }
 .subtitle-form{
   position: relative;
@@ -207,40 +185,46 @@
   border: 1px solid transparent;
   resize: none;
 }
-.form__button_send{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  height: 45px;
-  background: #06b39e;
-  color: $white;
-  border:1px solid transparent;
-  border-right:1px solid $white;
-  border-bottom-left-radius: 5px;
-  &:hover{
-    cursor: pointer;
-    background: #1b8987;
-    transition:.5s;
+.form__button {
+  width: 100%;
+  display: flex;
+  &_send {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 45px;
+    background: #06b39e;
+    color: $white;
+    border: 1px solid transparent;
+    border-right: 1px solid $white;
+    border-bottom-left-radius:5px ;
+    &:hover {
+      cursor: pointer;
+      background: #1b8987;
+      transition: .5s;
+    }
+  }
+  &_clear {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 45px;
+    background: #06b39e;
+    font-size: 16px;
+    color: $white;
+    border: 1px solid transparent;
+    border-bottom-right-radius:5px ;
+    &:hover {
+      cursor: pointer;
+      background: #1b8987;
+      transition: .5s;
+    }
   }
 }
-.form__button_clear{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 45px;
-  background: #06b39e;
-  font-size:16px;
-  color: $white;
-  border:1px solid transparent;
-  border-bottom-right-radius: 5px;
-  &:hover{
-    cursor: pointer;
-    background: #1b8987;
-    transition:.5s;
-  }
-}
+
 .arrow-scroll_up{
   display:block;
   width: 30px;

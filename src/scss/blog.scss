@@ -57,8 +57,9 @@
   position: absolute;
   right: 49%;
   top:70%;
-  @include smartTV{
-    top:80%;
+  @include tablets{
+    top:90%;
+    right: 47%;
   }
 }
 .icon__scroll{

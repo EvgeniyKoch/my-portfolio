@@ -8,10 +8,21 @@ var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
+// SCROLL
+// $('.saidbar__item').on('click', event => {
+//     event.preventDefault();
+//
+//     const $this = $(event.currentTarget);
+//     let scroll_el = $this.attr('#article3');
+//
+//     if ($(scroll_el).length != 0) {
+//
+//         $('html,body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
+//     }
+// });
 
 
-
-//SideBar
+// SideBar
 var $item = document.getElementsByClassName('saidbar__item'),
     activeItem = 'saidbar__item-active';
 
@@ -26,7 +37,8 @@ for (var i = 0; i < $item.length; i++) {
             this.classList.remove(activeItem);
         }
     })
-}
+};
+
 
 
 
@@ -290,77 +302,3 @@ $(document).ready(function(){
 });
 
 
-// Carousel
-
-    var slides = [
-        {
-            title: 'Сайт школы онлайн образования',
-            image: 'slide-1.jpg',
-            description: 'Описание проекта',
-            tags: ['js', 'pug']
-        },
-        {
-            title: 'Название проекта',
-            image: 'slide-2.jpg',
-            description: 'Описание проекта',
-            tags: ['js', 'pug']
-        },
-        {
-            title: 'Название проекта 2',
-            image: 'slide-3.jpg',
-            description: 'Описание проекта',
-            tags: ['js', 'pug']
-        },
-        {
-            title: 'Название проекта 3',
-            image: 'slide-4.jpg',
-            description: 'Описание проекта',
-            tags: ['js', 'pug']
-        },
-    ];
-
-    var slider = document.querySelector('.js-slider'),
-        mainSlide = slider.querySelector('.js-main-slide'),
-        upSlide = slider.querySelector('.js-scroll-up'),
-        downSlide = slider.querySelector('.js-scroll-down'),
-        description = slider.querySelector('.js-description'),
-        currentSlide = 0,
-        slideLength = slides.length;
-
-
-    upSlide.addEventListener('click', function (e) {
-        currentSlide = slideLimiter(currentSlide - 1);
-        fillSlider();
-    });
-    downSlide.addEventListener('click', function (e) {
-        currentSlide = slideLimiter(currentSlide + 1);
-        fillSlider();
-    });
-
-
-    function fillSlider() {
-
-        var prev = slideLimiter(currentSlide - 1),
-            next = slideLimiter(currentSlide + 1);
-
-        mainSlide.innerText = slides[currentSlide].title;
-        upSlide.innerText = slides[prev].title;
-        downSlide.innerText = slides[next].title;
-        description.innerText = slides[currentSlide].description;
-
-    }
-
-    function slideLimiter(value) {
-        if (value >= slideLength) {
-            return 0;
-        } else if (value < 0) {
-            return slideLength - 1;
-        } else {
-            return value;
-        }
-
-
-// img = document.createElement('img');
-// img.setAttribute('src', slides[0].image);
-// mainSlide.appendChild(img);
-}

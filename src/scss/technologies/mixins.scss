@@ -11,6 +11,12 @@
     @content;
     }
 }
+@mixin iphone5 {
+      @media screen and(max-width:$screen-i5) {
+
+    @content;
+    }
+}
 @mixin netbook {
         @media screen and(max-width:$screen-md) {
     @content;

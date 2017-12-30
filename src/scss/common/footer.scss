@@ -6,12 +6,19 @@
     align-items:center;
     padding: 10px 3.125rem;
     border-bottom:4px solid #666c6e;
+    @include tablets{
+      flex-direction:column;
+    }
   }
   &-nav{
     display: flex;
     justify-content: space-between;
     align-items:center;
     width: 40%;
+    @include tablets{
+      width: 80%;
+      margin-bottom:10px;
+    }
     &__link{
       font:16px/1.62 'robotomedium';
       color: $white;
@@ -25,9 +32,17 @@
     padding: 10px 3.125rem;
     display: flex;
     justify-content: space-between;
+    @include tablets{
+      flex-direction:column;
+      text-align: center;
+    }
   }
   &__description{
     width: 40%;
+    @include tablets{
+      width: 100%;
+      margin-bottom:10px;
+    }
   }
   &__description,&__dev{
     font:16px/1.63  'robotolight';
