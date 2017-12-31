@@ -59,11 +59,19 @@
   top:70%;
   @include tablets{
     top:90%;
-    right: 47%;
+    right: 46%;
+  }
+  @include iphone5{
+    right: 45%;
   }
 }
 .icon__scroll{
   fill:#bfced5;
+  &:hover{
+    width: 35px;
+    height: 35px;
+    transition: .5s;
+  }
 }
 .about__triangle-blog{
   position: absolute;

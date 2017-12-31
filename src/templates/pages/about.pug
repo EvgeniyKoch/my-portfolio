@@ -12,7 +12,7 @@ block content
                 .user-name
                     h1.title Евгений Кочетов
                     p.user__text Личный сайт веб-разработчика
-            a.arrow-scroll(href='#')
+            a.arrow-scroll(href='#about')
                 svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25' preserveAspectRatio="none")
                     use(xlink:href='images/icons/sprite.svg#arrow_down')
             .about__triangle
@@ -20,7 +20,7 @@ block content
                     polygon.about__triangle_left(fill="#efeee9" points="0,0 0,86 500.8,86 500.8,75.5" )
                     polygon.about__triangle_right( fill="#eeebdf" points="1000,0 1000,86 500,86 500,75.5" )
 
-        section.section.about
+        section.section.about(id="about")
             .about__left
                 .about__left_title
                     h1.block-title Обо мне

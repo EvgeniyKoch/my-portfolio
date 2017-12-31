@@ -1,5 +1,8 @@
 .section-about{
   min-height: 650px;
+  @include phones{
+    min-height: 580px;
+  }
   &:before {
     background: url("../images/icons/portfolio_header.svg")no-repeat;
     position: absolute;
@@ -360,6 +363,11 @@
   @include tablets{
     top: 30%;
   }
+  @include phones{
+    width: 18.5625rem;
+    height: 17.3125rem;
+    padding:1rem;
+  }
   @include iphone5{
     left:45%;
     width: 21.5625rem;
@@ -368,10 +376,17 @@
 .contacts-subtitle{
   &:before{
     left: 3.625rem;
+    @include phones{
+      left: 13.625rem;
+    }
   }
   &:after{
     right: 3.625rem;
+    @include phones{
+      right: 13.625rem;
+    }
   }
+
 }
 .contacts-row__icon {
   width: 15px;
