@@ -12,13 +12,13 @@ block content
                 .user-name
                     h1.title Евгений Кочетов
                     p.user__text Личный сайт веб разработчика
-            a.arrow-scroll(href='#')
+            a.arrow-scroll.arrow-scroll_down(href='#')
                 svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25')
                     use(xlink:href='images/icons/sprite.svg#arrow_down')
             .about__triangle
                 svg.about__triangle-white(xmlns="http://www.w3.org/2000/svg", viewbox='0 0 1000 85', preserveAspectRatio="none")
-                    polygon.about__triangle_left(fill="#ffffff" points="0,0 0,86 500.8,86 500.8,75.5" )
-                    polygon.about__triangle_right( fill="#ffffff" points="1000,0 1000,86 500,86 500,75.5" )
+                    polygon.about__triangle_left-works(fill="#ffffff" points="0,0 0,86 500.8,86 500.8,75.5" )
+                    polygon.about__triangle_right-works( fill="#ffffff" points="1000,0 1000,86 500,86 500,75.5" )
 
         section.section.my-works
             .title-work
@@ -32,8 +32,6 @@ block content
                     a.content__link(href="#") Посмотреть сайт
                         svg.content__link-svg
                 .content__works-right
-
-
 
         section.section.speak
             .title-speak

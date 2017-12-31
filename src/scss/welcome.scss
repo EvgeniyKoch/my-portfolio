@@ -1,10 +1,16 @@
 .welcome {
   min-height: 40.625rem;
-  @include phones{
+  @include iphone5{
     min-height: 580px;
   }
   @include tablets{
-    background:url("../images/background/bg_welcome.png");
+    background:url("../images/background/bg_welcome.png")center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 .parallax{

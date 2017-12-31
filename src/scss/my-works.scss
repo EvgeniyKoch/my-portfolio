@@ -14,6 +14,17 @@
     opacity: .2;
   }
 }
+.arrow-scroll_down{
+ @include tablets{
+   right: 48%;
+ }
+}
+.about__triangle_left-works{
+  fill:$white;
+}
+.about__triangle_right-works{
+  fill:$white;
+}
 .title-works {
   @include title;
   color: #373e42;
@@ -46,13 +57,25 @@
   display: flex;
   justify-content: space-around;
   height: 100%;
+  @include tablets{
+    flex-direction:column-reverse;
+  }
   &-left{
     background: #f0efe9;
     width: 50%;
+    @include tablets{
+      width: 100%;
+      height: 100%;
+      background: $white;
+    }
   }
   &-right{
     width: 50%;
-
+    @include tablets{
+      width: 100%;
+      height: 100%;
+      background: #eeebe0;
+    }
   }
 }
 
@@ -81,13 +104,30 @@
     background: url("../images/icons/about_header.svg")no-repeat;
     width:45%;
   }
+  @include phones{
+    text-align: center;
+    padding: 0 20px;
+  }
 }
 .title-speaks{
   @extend .title-works;
+  &:before{
+   @include phones{
+     left: 10%;
+   }
+  }
+  &:after{
+    @include phones{
+      right: 10%;
+    }
+  }
 }
 .speak-description{
   display: flex;
   justify-content:center;
+  @include phones{
+    flex-direction:column;
+  }
 }
 .loft-description{
   padding:0 20px;
@@ -95,9 +135,22 @@
   margin-bottom:70px;
   &>p:nth-child(2n){
     @include robotoreg;
+    @include phones{
+      text-align: left;
+    }
   }
   &__img{
     margin-bottom:20px;
+  }
+  @include netbook{
+    width: 50%;
+  }
+  @include tablets{
+    width: 50%;
+  }
+  @include phones{
+    width: 100%;
+    text-align: center;
   }
 }
 .loft-user{
@@ -134,6 +187,9 @@
   border-top-right-radius: 5px;
   position: relative;
   margin-bottom:60px;
+  @include phones{
+    width: 21.75rem;
+  }
 }
 .form{
   display: flex;
@@ -147,6 +203,10 @@
 }
 .subtitle-form{
   position: relative;
+  @include phones{
+    font: 1.8rem bernier_regularregular;
+    margin-bottom: 0.875rem;
+  }
   &:before{
     content: '';
     position: absolute;
@@ -230,7 +290,17 @@
   width: 30px;
   height:100px;
   margin:0 auto;
+  @include phones{
+    height: 3.25rem;
+    width: 40px;
+  }
 }
 .icon__scroll_up{
   fill:#b4d0d2;
+  &:hover {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    transition: .5s;
+  }
 }
