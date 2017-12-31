@@ -1,5 +1,11 @@
 .welcome {
   min-height: 40.625rem;
+  @include phones{
+    min-height: 580px;
+  }
+  @include tablets{
+    background:url("../images/background/bg_welcome.png");
+  }
 }
 .parallax{
   position: absolute;
@@ -10,6 +16,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  @include tablets{
+    display: none;
+  }
   &__layer{
     position: absolute;
     top: 0;
