@@ -56,7 +56,8 @@
   display: block;
   position: absolute;
   right: 49%;
-  top:70%;
+  top:90%;
+  z-index: 2;
   @include tablets{
     top:90%;
     right: 46%;
@@ -64,13 +65,21 @@
   @include iphone5{
     right: 45%;
   }
+  &-blog{
+    @include tablets{
+      right:48%;
+    }
+    @include phones{
+      right:46%;
+    }
+  }
 }
 .icon__scroll{
   fill:#bfced5;
   &:hover{
-    width: 35px;
-    height: 35px;
-    transition: .5s;
+    width: 27px;
+    height: 27px;
+    transition: .2s;
   }
 }
 .about__triangle-blog{
@@ -78,6 +87,12 @@
   bottom: -6px;
   left: 0;
   right: 0;
+  @include tablets{
+    fill:#ffffff;
+  }
+  @include phones{
+    bottom:-10px;
+  }
 }
 .main-blog{
   display: flex;
@@ -86,6 +101,9 @@
 }
 .saidbar{
   padding: 3.125rem;
+  @include tablets{
+    display: none;
+  }
   &__list {
     display: flex;
     flex-direction: column;
@@ -122,6 +140,10 @@
 .articles{
   width: 65%;
   padding:3.125rem;
+  @include tablets{
+    width: 100%;
+    padding:2rem;
+  }
 }
 .article{
  border-bottom: 4px solid #f1f1f2;
