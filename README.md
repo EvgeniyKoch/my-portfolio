@@ -1,4 +1,4 @@
-> #### README может измениться на последнем этапе разработки
+
 
 <h3 align='center'>Выпускной проект курса по веб-разработке от <a href='https://loftschool.com' target='_blank'> Loftschool</a></h3>
 
@@ -12,8 +12,7 @@
 *Инструкция по установке:*
 
 ```
-git clone https:
-cd ls-sitePortfolio
+git clone https://github.com/EvgeniyKoch/my-portfolio.io.git
 npm i
 ```
 
