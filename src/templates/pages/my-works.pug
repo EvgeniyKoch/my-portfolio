@@ -8,7 +8,7 @@ block content
             include ../common/header
             .user-portfolio
                 .foto
-                    img.foto__user(src='images/img/im.jpg', alt='i')
+                    img.foto__user(src='images/img/im2.jpg', alt='i')
                 .user-name
                     h1.title Евгений Кочетов
                     p.user__text Личный сайт веб разработчика
@@ -25,13 +25,30 @@ block content
                 h1.title-works Мои работы
 
         section.section.carousel
-            .content__works
-                .content__works-left
-                    h2.subtitle Сайт школы онлайн образования
-                    h3.title-description
-                    a.content__link(href="#") Посмотреть сайт
-                        svg.content__link-svg
-                .content__works-right
+            .works__slider
+                .slider__info
+                    .slider__title
+                        h3.subtitle Сайт 1
+                    .slider__skills
+                        .slider__skills-text HTML, CSS, JAVASCRIPT
+                    .slider__link-wrap
+                        a.slider__button(href="#")
+                            .slider__button-svg
+                            span.text-link Посмотреть сайт
+                .slider__right-top
+                    .slider-screen
+                        img.slider-screen__img(src="images/slider/slide.png")
+                .slider__btns
+                    button.previous-slide.slider__link#previous
+                        .slider__wrap-img
+                            img.slider__img(src="images/slider/slide-1.jpg")
+                        svg.slider__svg
+                            use(xlink:href="images/icons/sprite.svg#portf_arrow_down")
+                    button.next-slide.slider__link#next
+                        .slider__wrap-img
+                            img.slider__img(src="images/slider/slide-2.jpg")
+                        svg.slider__svg
+                            use(xlink:href="images/icons/sprite.svg#portf_arrow_up")
 
         section.section.speak
             .title-speak

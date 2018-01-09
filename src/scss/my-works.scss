@@ -50,46 +50,139 @@
   }
 }
 //-----------------------section CAROUSEL----------------
-.carousel{
-  height: 100vh;
-}
-.content__works{
+
+.works__slider{
   display: flex;
-  justify-content: space-around;
-  height: 100%;
-  @include tablets{
-    flex-direction:column-reverse;
-  }
-  &-left{
-    background: #f0efe9;
-    width: 50%;
-    @include tablets{
-      width: 100%;
-      height: 100%;
-      background: $white;
-    }
-  }
-  &-right{
-    width: 50%;
-    @include tablets{
-      width: 100%;
-      height: 100%;
-      background: #eeebe0;
-    }
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+
+  @include netbook{
+    height: auto;
   }
 }
 
+.slider__info{
+  background-color: #f0efe9;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 
+  @include netbook{
+    height: auto;
+    width: 100%;
+    padding:20px 10px 60px;
+  }
+}
 
+.slider__skills{
+  margin-bottom: 40px;
+  padding: 20px 0;
+  border-top:1px solid rgba($dark-green,.3);
+  border-bottom:1px solid rgba($dark-green,.3);
+}
 
+.slider__button{
+  display: block;
+  padding:15px 20px;
+  background-color:#00bfa5;
+  border-radius: 5px;
+  transition: all .5s;
+  &:hover{
+    background-color: $dark-green;
+  }
+}
+.text-link {
+  color: #fff;
+  font-family: 'robotomedium';
+  transition: color .5s;
+}
+.slider__skills-text{
+  color: #20b5a1;
+  font-family:'robotomedium';
+}
 
+.slider__right-top{
+  height: 70%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efebe0;
 
+  @include netbook{
+    height: auto;
+    width: 100%;
+    padding:45px 0;
+    order: -10;
+  }
+}
 
+.slider-screen{
+  width: 600px;
+  height: 400px;
+}
 
+.slider-screen__img{
+  max-width: 100%;
+  max-height:100%;
+}
 
+.slider__btns{
+  height: 30%;
+  width: 50%;
+  display: flex;
 
+  @include netbook{
+    height: 200px;
+    width: 100%;
+  }
+}
 
+.slider__link{
+  width: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:none;
+  background-color: transparent;
+  padding: 0;
+  &:hover{
 
+  }
+}
+
+.slider__wrap-img{
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  @include desktop{
+    height: 225px;
+  }
+
+  @include tablets{
+    height: 215px;
+  }
+}
+
+.slider__img{
+  max-width: 100%;
+  max-height: 100%;
+  flex: auto;
+}
+
+.slider__svg{
+  width: 28px;
+  height: 20px;
+  fill: #fff;
+  z-index: 50;
+  position: absolute;
+}
 
 
 //-------------------------Speak about------------------

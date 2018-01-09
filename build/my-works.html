@@ -42,7 +42,7 @@
             </nav>
           </header>
           <div class="user-portfolio">
-            <div class="foto"><img class="foto__user" src="images/img/im.jpg" alt="i"></div>
+            <div class="foto"><img class="foto__user" src="images/img/im2.jpg" alt="i"></div>
             <div class="user-name">
               <h1 class="title">Евгений Кочетов</h1>
               <p class="user__text">Личный сайт веб разработчика</p>
@@ -64,13 +64,34 @@
           </div>
         </section>
         <section class="section carousel">
-          <div class="content__works">
-            <div class="content__works-left">
-              <h2 class="subtitle">Сайт школы онлайн образования</h2>
-              <h3 class="title-description"></h3><a class="content__link" href="#">Посмотреть сайт
-                <svg class="content__link-svg"></svg></a>
+          <div class="works__slider">
+            <div class="slider__info">
+              <div class="slider__title">
+                <h3 class="subtitle">Сайт 1</h3>
+              </div>
+              <div class="slider__skills">
+                <div class="slider__skills-text">HTML, CSS, JAVASCRIPT</div>
+              </div>
+              <div class="slider__link-wrap"><a class="slider__button" href="#">
+                  <div class="slider__button-svg"></div><span class="text-link">Посмотреть сайт</span></a></div>
             </div>
-            <div class="content__works-right"></div>
+            <div class="slider__right-top">
+              <div class="slider-screen"><img class="slider-screen__img" src="images/slider/slide.png"></div>
+            </div>
+            <div class="slider__btns">
+              <button class="previous-slide slider__link" id="previous">
+                <div class="slider__wrap-img"><img class="slider__img" src="images/slider/slide-1.jpg"></div>
+                <svg class="slider__svg">
+                  <use xlink:href="images/icons/sprite.svg#portf_arrow_down"></use>
+                </svg>
+              </button>
+              <button class="next-slide slider__link" id="next">
+                <div class="slider__wrap-img"><img class="slider__img" src="images/slider/slide-2.jpg"></div>
+                <svg class="slider__svg">
+                  <use xlink:href="images/icons/sprite.svg#portf_arrow_up"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </section>
         <section class="section speak">
