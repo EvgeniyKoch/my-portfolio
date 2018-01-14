@@ -267,7 +267,7 @@ if(document.querySelector('#map')){
             position: {lat: 51.697354, lng: 39.269249},
             map: map,
             title: 'Евгений',
-            icon: 'evgeniykoch.github.io/my-portfolio.io/build/images/icons/map_marker.svg'
+            icon: '../images/icons/map_marker.svg'
         });
 
     }
