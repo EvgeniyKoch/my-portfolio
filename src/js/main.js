@@ -352,7 +352,7 @@ if(document.querySelector('#page-preload')) {
                         preload.classList.add('page-preload_done');
                         content.classList.add('welcome-page_show')
                     }
-                }, 1500)
+                }, 500)
             }
         }
 
