@@ -298,6 +298,7 @@
 }
 
 .previous-slide{
+  outline:none;
   &:after{
     content: '';
     position: absolute;
@@ -320,6 +321,7 @@
 }
 
 .next-slide{
+  outline:none;
   &:after{
     content: '';
     position: absolute;
