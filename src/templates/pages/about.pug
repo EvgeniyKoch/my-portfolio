@@ -57,13 +57,20 @@ block content
                                             li.skills-row__item
                                                 svg.skill__circle(viewBox="0 0 110 110")
                                                     circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-15(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                    circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
                                                 span.skill__title JavaScript
+
                                             li.skills-row__item
                                                 svg.skill__circle(viewBox="0 0 110 110")
                                                     circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-15(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title jQuery
+                                                    circle.circle__second.circle-40(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title Jquery
+
+                                            li.skills-row__item
+                                                svg.skill__circle(viewBox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circle__second.circle-10(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                span.skill__title Vue
                     ul.skills-list
                         each item in ['Backend']
                             li.skills-list__item
@@ -80,7 +87,7 @@ block content
                             li.skills-list__item
                                 .skills-row__title #{item}
                                     ul.skills-row__list
-                                        each skill in ['Git', 'Gulp','Sass', 'Jade']
+                                        each skill in ['Git', 'Gulp','Sass', 'Pug']
                                             li.skills-row__item
                                                 svg.skill__circle(viewBox="0 0 110 110")
                                                     circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
