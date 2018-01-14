@@ -50,6 +50,41 @@
   }
 }
 //-----------------------section CAROUSEL----------------
+.works{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  //
+  //&:before{
+  //  content: "";
+  //  display: block;
+  //  position: absolute;
+  //  width: 100%;
+  //  bottom: 100%;
+  //  left: 0;
+  //  height:150px;
+  //  background-image: url('../img/bg-svg/triangle-works.svg');
+  //  transition: height .5s;
+  //  transform: translateY(2px);
+  //
+  //  @include tablets{
+  //    height: 100px;
+  //  }
+  //
+  //}
+
+}
+
+.works__top{
+  background-color: #faf8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .works__slider{
   display: flex;
@@ -65,16 +100,39 @@
 .slider__info{
   background-color: #f0efe9;
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100%;
 
   @include netbook{
-    height: auto;
+    height: 400px;
     width: 100%;
     padding:20px 10px 60px;
+  }
+}
+.text-link{
+ @include roboto;
+  font-family:'robotomedium';
+  margin-left:10px;
+}
+.slider-info__list{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-info__item{
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity .5s;
+  &.active{
+    opacity: 1;
+    z-index: 10;
   }
 }
 
@@ -91,15 +149,19 @@
   background-color:#00bfa5;
   border-radius: 5px;
   transition: all .5s;
+
   &:hover{
     background-color: $dark-green;
   }
+  &-svg{
+    display: flex;
+    align-items:center;
+    &-white{
+      fill:$white;
+    }
+  }
 }
-.text-link {
-  color: #fff;
-  font-family: 'robotomedium';
-  transition: color .5s;
-}
+
 .slider__skills-text{
   color: #20b5a1;
   font-family:'robotomedium';
@@ -126,6 +188,21 @@
   height: 400px;
 }
 
+.carousel-main{
+  position: relative;
+}
+
+.carousel-main__slide{
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: all 1s;
+  &.active{
+    z-index: 10;
+    opacity: 1;
+  }
+}
+
 .slider-screen__img{
   max-width: 100%;
   max-height:100%;
@@ -135,6 +212,7 @@
   height: 30%;
   width: 50%;
   display: flex;
+  background-color: #efebe0;
 
   @include netbook{
     height: 200px;
@@ -142,31 +220,124 @@
   }
 }
 
+.carousel-slides__slide{
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slides__slide-previous{
+  bottom: 100%;
+  opacity:0;
+  z-index: -10;
+  transition: top .75s, bottom .75s, z-index .75s;
+  &.active{
+    bottom: 0;
+    z-index: 10;
+    opacity: 1;
+  }
+  &.next-active{
+    bottom:-100%;
+    z-index: 5;
+    opacity: 1;
+  }
+  &.old-active{
+    bottom:100%;
+    z-index: 10;
+    opacity: 1;
+  }
+}
+
+.carousel-slides__slide-next{
+  bottom: 100%;
+  opacity:0;
+  z-index: -10;
+  transition: top .75s, bottom .75s, z-index .75s;
+  &.active{
+    bottom: 0;
+    z-index: 10;
+    opacity: 1;
+  }
+  &.next-active{
+    bottom:-100%;
+    z-index: 5;
+    opacity: 1;
+  }
+  &.old-active{
+    bottom:100%;
+    z-index: 10;
+    opacity: 1;
+  }
+}
+
 .slider__link{
   width: 50%;
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
   border:none;
   background-color: transparent;
   padding: 0;
-  &:hover{
+  position: relative;
+  overflow: hidden;
 
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#b6b4ae,.7);
+    z-index: 40;
   }
 }
 
-.slider__wrap-img{
-  display: flex;
-  height: 100%;
-  width: 100%;
-
-  @include desktop{
-    height: 225px;
+.previous-slide{
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 30px;
+    height: 20px;
+    background:url("../images/icons/portf_arrow_up.svg") no-repeat;
+    background-size: cover;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    z-index: 50;
   }
+  &:hover{
+    &:after{
+      top: 60%;
+      transition: top .3s;
+    }
+  }
+}
 
-  @include tablets{
-    height: 215px;
+.next-slide{
+  &:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 20px;
+    background:url("../images/icons/portf_arrow_down.svg") no-repeat;
+    background-size: cover;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    top: 50%;
+    z-index: 50;
+  }
+  &:hover{
+    &:after{
+      top: 40%;
+      transition: top .3s;
+    }
   }
 }
 
@@ -176,13 +347,6 @@
   flex: auto;
 }
 
-.slider__svg{
-  width: 28px;
-  height: 20px;
-  fill: #fff;
-  z-index: 50;
-  position: absolute;
-}
 
 
 //-------------------------Speak about------------------

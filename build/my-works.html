@@ -63,33 +63,82 @@
             <h1 class="title-works">Мои работы</h1>
           </div>
         </section>
-        <section class="section carousel">
+        <section class="works">
           <div class="works__slider">
             <div class="slider__info">
-              <div class="slider__title">
-                <h3 class="subtitle">Сайт 1</h3>
-              </div>
-              <div class="slider__skills">
-                <div class="slider__skills-text">HTML, CSS, JAVASCRIPT</div>
-              </div>
-              <div class="slider__link-wrap"><a class="slider__button" href="#">
-                  <div class="slider__button-svg"></div><span class="text-link">Посмотреть сайт</span></a></div>
+              <ul class="slider-info__list">
+                <li class="slider-info__item active">
+                  <div class="slider__title">
+                    <h3 class="subtitle">Сайт 1</h3>
+                  </div>
+                  <div class="slider__skills">
+                    <div class="slider__skills-text">HTML, CSS, JAVASCRIPT</div>
+                  </div>
+                  <div class="slider__link-wrap"><a class="slider__button" href="#">
+                      <div class="slider__button-svg">
+                        <svg class="slider__button-svg-white" viewbox="0 0 50 50" width="25" height="25">
+                          <use xlink:href="images/icons/sprite.svg#link"></use>
+                        </svg><span class="text-link">Посмотреть сайт</span>
+                      </div></a></div>
+                </li>
+                <li class="slider-info__item">
+                  <div class="slider__title">
+                    <h3 class="subtitle">Сайт 2</h3>
+                  </div>
+                  <div class="slider__skills">
+                    <div class="slider__skills-text">PUG, SASS</div>
+                  </div>
+                  <div class="slider__link-wrap"><a class="slider__button" href="#">
+                      <div class="slider__button-svg"></div><span class="text-link">Посмотреть сайт</span></a></div>
+                </li>
+                <li class="slider-info__item">
+                  <div class="slider__title">
+                    <h3 class="subtitle">Сайт 3</h3>
+                  </div>
+                  <div class="slider__skills">
+                    <div class="slider__skills-text">JADE, SCSS, NODE JS</div>
+                  </div>
+                  <div class="slider__link-wrap"><a class="slider__button" href="#">
+                      <div class="slider__button-svg"></div><span class="text-link">Посмотреть сайт</span></a></div>
+                </li>
+                <li class="slider-info__item">
+                  <div class="slider__title">
+                    <h3 class="subtitle">Сайт 4</h3>
+                  </div>
+                  <div class="slider__skills">
+                    <div class="slider__skills-text">PHP, POST CSS</div>
+                  </div>
+                  <div class="slider__link-wrap"><a class="slider__button" href="#">
+                      <div class="slider__button-svg"></div><span class="text-link">Посмотреть сайт</span></a></div>
+                </li>
+              </ul>
             </div>
             <div class="slider__right-top">
-              <div class="slider-screen"><img class="slider-screen__img" src="images/slider/slide.png"></div>
+              <div class="slider-screen">
+                <ul class="carousel-main">
+                  <li class="carousel-main__slide active"><img class="slider-screen__img" src="images/slider/slide.png"></li>
+                  <li class="carousel-main__slide"><img class="slider-screen__img" src="images/slider/slide-1.png"></li>
+                  <li class="carousel-main__slide"><img class="slider-screen__img" src="images/slider/work1.png"></li>
+                  <li class="carousel-main__slide"><img class="slider-screen__img" src="images/slider/work2.png"></li>
+                </ul>
+              </div>
             </div>
             <div class="slider__btns">
               <button class="previous-slide slider__link" id="previous">
-                <div class="slider__wrap-img"><img class="slider__img" src="images/slider/slide-1.jpg"></div>
-                <svg class="slider__svg">
-                  <use xlink:href="images/icons/sprite.svg#portf_arrow_down"></use>
-                </svg>
+                <ul class="carousel-slides">
+                  <li class="carousel-slides__slide carousel-slides__slide-previous old-active"><img class="slider__img" src="images/slider/slide.png"></li>
+                  <li class="carousel-slides__slide carousel-slides__slide-previous"><img class="slider__img" src="images/slider/slide-1.png"></li>
+                  <li class="carousel-slides__slide carousel-slides__slide-previous next-active"><img class="slider__img" src="images/slider/work1.png"></li>
+                  <li class="carousel-slides__slide carousel-slides__slide-previous active"><img class="slider__img" src="images/slider/work2.png"></li>
+                </ul>
               </button>
               <button class="next-slide slider__link" id="next">
-                <div class="slider__wrap-img"><img class="slider__img" src="images/slider/slide-2.jpg"></div>
-                <svg class="slider__svg">
-                  <use xlink:href="images/icons/sprite.svg#portf_arrow_up"></use>
-                </svg>
+                <ul class="carousel-slides">
+                  <li class="carousel-slides__slide carousel-slides__slide-next old-active"><img class="slider__img" src="images/slider/slide.png"></li>
+                  <li class="carousel-slides__slide carousel-slides__slide-next active"><img class="slider__img" src="images/slider/slide-1.png"></li>
+                  <li class="carousel-slides__slide carousel-slides__slide-next next-active"><img class="slider__img" src="images/slider/work1.png"></li>
+                  <li class="carousel-slides__slide carousel-slides__slide-next"><img class="slider__img" src="images/slider/work2.png"></li>
+                </ul>
               </button>
             </div>
           </div>
