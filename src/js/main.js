@@ -10,48 +10,41 @@ var $window = $(window);
 
 
 
+if(document.querySelector('.saidbar__item')){
+    // SideBar
+    $(document).ready(function () {
+        var $item = document.getElementsByClassName('saidbar__item'),
+            activeItem = 'saidbar__item-active';
 
-
-
-
-
-
-
-
-// SideBar
-$(document).ready(function () {
-    var $item = document.getElementsByClassName('saidbar__item'),
-        activeItem = 'saidbar__item-active';
-
-    for (var i = 0; i < $item.length; i++) {
-        $item[i].addEventListener('click', function() {
-            if(!(this.classList.contains(activeItem))) {
-                for (var j = 0; j < $item.length; j++) {
-                    $item[j].classList.remove(activeItem);
-                    this.classList.add(activeItem);
+        for (var i = 0; i < $item.length; i++) {
+            $item[i].addEventListener('click', function() {
+                if(!(this.classList.contains(activeItem))) {
+                    for (var j = 0; j < $item.length; j++) {
+                        $item[j].classList.remove(activeItem);
+                        this.classList.add(activeItem);
+                    }
+                } else {
+                    this.classList.remove(activeItem);
                 }
-            } else {
-                this.classList.remove(activeItem);
-            }
-        })
-    };
+            })
+        };
 
-    // SCROLL
-    $('.saidbar__item').on('click',function () {
-
-        event.preventDefault();
-
-        const $this = $(event.currentTarget);
-        let scroll_el = $this.attr('#article3');
-
-        if ($(scroll_el).length != 0) {
-
-            $('html,body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
-        }
+        // SCROLL
+        // $('.saidbar__item').on('click',function () {
+        //
+        //     event.preventDefault();
+        //
+        //     const $this = $(event.currentTarget);
+        //     let scroll_el = $this.attr('#article3');
+        //
+        //     if ($(scroll_el).length != 0) {
+        //
+        //         $('html,body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
+        //     }
+        // });
     });
-});
 
-
+}
 
 
 // hamburgerMenu
@@ -299,11 +292,18 @@ if(document.querySelector('.welcome')){
 
         });
     };
+
+    $(document).ready(function () {
+        $(window).resize(function() {
+            if ($(window).width() <= '768') {
+                $('#parallax').css('display','none');
+            }
+            return this;
+        });
+    });
 }
-
-
-
 window.addEventListener('mousemove', moveLayers);
+
 
 //Parallax Scrolling
 $(document).ready(function(){
@@ -534,9 +534,6 @@ if(document.querySelectorAll('.works__slider')){
 
             })
         }
-
-
-
         function sliderInit(){
             if (slider.nextLink && slider.previousLink){
                 nextLinkListener();
@@ -544,8 +541,64 @@ if(document.querySelectorAll('.works__slider')){
             }
         }
 
-
         // module.exports = sliderInit;
-
+        nextLinkListener();
+        previousLinkListener();
     }());
+
 }
+
+//Preload
+// (function () {
+//     let
+//         imagesAll = document.images,
+//         imagesTotalCount = imagesAll.length,
+//         imagesLoadCount = 0,
+//         preload = document.getElementById('page-preload'),
+//         percDisplay = document.getElementById('load-perc'),
+//         content = document.getElementById('welcome-page');
+//
+//
+//
+//     for(let i = 0; i < imagesTotalCount; i++ ){
+//         let imgClone = new Image();
+//         imgClone.onload = imgLoaded;
+//         imgClone.onerror = imgLoaded;
+//         imgClone.src = imagesAll[i].src;
+//     }
+//
+//
+//     function imgLoaded() {
+//         imagesLoadCount++;
+//         percDisplay.innerHTML = (( (100 / imagesTotalCount) * imagesLoadCount) << 0);
+//         if ( ((100 / imagesTotalCount) * imagesLoadCount) >= 100 ) {
+//             percDisplay.innerHTML = '100';
+//         }
+//         if(imagesLoadCount >= imagesTotalCount){
+//             setTimeout(function() {
+//                 if (!preload.classList.contains('done')){
+//                     preload.classList.add('page-preload_done');
+//                     content.classList.add('welcome-page_show')
+//                 }
+//             }, 500)
+//         }
+//     }
+//
+//
+//
+//     function preloadInit() {
+//         if(preload){
+//             imgLoaded();
+//         }
+//
+//     }
+//
+//     module.exports = preloadInit;
+//
+// })();
+
+
+//Sidebar
+// if(document.querySelector('.article')){
+//
+//     }
