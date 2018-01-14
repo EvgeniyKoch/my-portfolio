@@ -99,13 +99,15 @@ function fonts() {
 // }
 
 function scripts() {
-    return gulp.src(paths.src + 'js/*.js')
+    return gulp.src(paths.src + 'js/main.js')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['env']
         }))
         .pipe(uglify())
         .pipe(concat('bundle.js'))
+        .pipe(sourcemaps.write('/'))
         .pipe(gulp.dest(paths.build + 'js/'))
 }
 

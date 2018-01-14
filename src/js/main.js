@@ -7,43 +7,52 @@ var dropDownMenu = document.querySelector('.menu');
 var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
+// const slider = require('./common/carousel');
+//
+//
+// slider();
 
-// SCROLL
-// $('.saidbar__item').on('click', event => {
-//     event.preventDefault();
-//
-//     const $this = $(event.currentTarget);
-//     let scroll_el = $this.attr('#article3');
-//
-//     if ($(scroll_el).length != 0) {
-//
-//         $('html,body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
-//     }
-// });
+
 
 
 // SideBar
-var $item = document.getElementsByClassName('saidbar__item'),
-    activeItem = 'saidbar__item-active';
+$(document).ready(function () {
+    var $item = document.getElementsByClassName('saidbar__item'),
+        activeItem = 'saidbar__item-active';
 
-for (var i = 0; i < $item.length; i++) {
-    $item[i].addEventListener('click', function() {
-        if(!(this.classList.contains(activeItem))) {
-            for (var j = 0; j < $item.length; j++) {
-                $item[j].classList.remove(activeItem);
-                this.classList.add(activeItem);
+    for (var i = 0; i < $item.length; i++) {
+        $item[i].addEventListener('click', function() {
+            if(!(this.classList.contains(activeItem))) {
+                for (var j = 0; j < $item.length; j++) {
+                    $item[j].classList.remove(activeItem);
+                    this.classList.add(activeItem);
+                }
+            } else {
+                this.classList.remove(activeItem);
             }
-        } else {
-            this.classList.remove(activeItem);
-        }
-    })
-};
+        })
+    };
+
+    // SCROLL
+    // $('.saidbar__item').on('click',function () {
+    //
+    //     event.preventDefault();
+    //
+    //     const $this = $(event.currentTarget);
+    //     let scroll_el = $this.attr('#article3');
+    //
+    //     if ($(scroll_el).length != 0) {
+    //
+    //         $('html,body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
+    //     }
+    // });
+});
 
 
 
 
 // hamburgerMenu
-if(login) {
+if(login ) {
     login.addEventListener('click', function () {
 
         front.style.cssText = 'transform: rotateY(180deg) translate(50%,-50%); \
@@ -262,28 +271,30 @@ function initMap() {
 
 
 //Parallax
-var parallaxContainer = document.getElementById('parallax');
-var layers = parallaxContainer.children;
 
-var moveLayers = function (e) {
-    var initialX = (window.innerWidth / 2) - e.pageX;
-    var initialY = (window.innerHeight / 2) - e.pageY;
+    var parallaxContainer = document.getElementById('parallax');
+    var layers = parallaxContainer.children;
 
-    [].slice.call(layers).forEach(function(layer, index) {
-        var
-            divider = index / 40,
-            positionX = initialX * divider,
-            positionY = initialY * divider,
-            bottomPosition = (window.innerHeight / 2) * divider,
-            transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
-            image = layer.firstElementChild;
+    var moveLayers = function (e) {
+        var initialX = (window.innerWidth / 2) - e.pageX;
+        var initialY = (window.innerHeight / 2) - e.pageY;
 
-        layer.style.transform = transformString;
-        image.style.bottom = '-' + bottomPosition + 'px';
+        [].slice.call(layers).forEach(function (layer, index) {
+            var
+                divider = index / 40,
+                positionX = initialX * divider,
+                positionY = initialY * divider,
+                bottomPosition = (window.innerHeight / 2) * divider,
+                transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
+                image = layer.firstElementChild;
 
-    });
+            layer.style.transform = transformString;
+            image.style.bottom = '-' + bottomPosition + 'px';
 
-};
+        });
+
+    };
+
 
 window.addEventListener('mousemove', moveLayers);
 
