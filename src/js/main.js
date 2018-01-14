@@ -8,7 +8,46 @@ var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
+//Preload
+if(document.querySelector('#page-preload')) {
+    (function () {
+        let
+            imagesAll = document.images,
+            imagesTotalCount = imagesAll.length,
+            imagesLoadCount = 0,
+            preload = document.getElementById('page-preload'),
+            percDisplay = document.getElementById('load-perc'),
+            content = document.getElementById('welcome-page');
 
+
+        for (let i = 0; i < imagesTotalCount; i++) {
+            let imgClone = new Image();
+            imgClone.onload = imgLoaded;
+            imgClone.onerror = imgLoaded;
+            imgClone.src = imagesAll[i].src;
+        }
+
+
+        function imgLoaded() {
+            imagesLoadCount++;
+            percDisplay.innerHTML = (( (100 / imagesTotalCount) * imagesLoadCount) << 0);
+            if (((100 / imagesTotalCount) * imagesLoadCount) >= 100) {
+                percDisplay.innerHTML = '100';
+            }
+            if (imagesLoadCount >= imagesTotalCount) {
+                setTimeout(function () {
+                    if (!preload.classList.contains('done')) {
+                        preload.classList.add('page-preload_done');
+                        content.classList.add('welcome-page_show')
+                    }
+                }, 500)
+            }
+        }
+
+        imgLoaded();
+
+    })();
+}
 
 if(document.querySelector('.saidbar__item')){
     // SideBar
@@ -293,14 +332,14 @@ if(document.querySelector('.welcome')){
         });
     };
 
-    $(document).ready(function () {
-        $(window).resize(function() {
-            if ($(window).width() <= '768') {
-                $('#parallax').css('display','none');
-            }
-            return this;
-        });
-    });
+    // $(document).ready(function () {
+    //     $(window).resize(function() {
+    //         if ($(window).width() <= '768') {
+    //             $('#parallax').css('display','none');
+    //         }
+    //         return this;
+    //     });
+    // });
 }
 window.addEventListener('mousemove', moveLayers);
 
@@ -320,46 +359,7 @@ $(document).ready(function(){
 });
 
 
-//Preload
-if(document.querySelector('#page-preload')) {
-    (function () {
-        let
-            imagesAll = document.images,
-            imagesTotalCount = imagesAll.length,
-            imagesLoadCount = 0,
-            preload = document.getElementById('page-preload'),
-            percDisplay = document.getElementById('load-perc'),
-            content = document.getElementById('welcome-page');
 
-
-        for (let i = 0; i < imagesTotalCount; i++) {
-            let imgClone = new Image();
-            imgClone.onload = imgLoaded;
-            imgClone.onerror = imgLoaded;
-            imgClone.src = imagesAll[i].src;
-        }
-
-
-        function imgLoaded() {
-            imagesLoadCount++;
-            percDisplay.innerHTML = (( (100 / imagesTotalCount) * imagesLoadCount) << 0);
-            if (((100 / imagesTotalCount) * imagesLoadCount) >= 100) {
-                percDisplay.innerHTML = '100';
-            }
-            if (imagesLoadCount >= imagesTotalCount) {
-                setTimeout(function () {
-                    if (!preload.classList.contains('done')) {
-                        preload.classList.add('page-preload_done');
-                        content.classList.add('welcome-page_show')
-                    }
-                }, 500)
-            }
-        }
-
-        imgLoaded();
-
-    })();
-}
 
 //Slider
 if(document.querySelectorAll('.works__slider')){
