@@ -8,6 +8,16 @@ var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
+
+$(document).ready(function () {
+    $(window).resize(function() {
+        if ($(window).width() < '768') {
+            $('#parallax').css('display','none');
+        }
+    });
+});
+
+
 //Preload
 if(document.querySelector('#page-preload')) {
     (function () {
@@ -332,16 +342,11 @@ if(document.querySelector('.welcome')){
         });
     };
 
-    // $(document).ready(function () {
-    //     $(window).resize(function() {
-    //         if ($(window).width() <= '768') {
-    //             $('#parallax').css('display','none');
-    //         }
-    //         return this;
-    //     });
-    // });
 }
 window.addEventListener('mousemove', moveLayers);
+
+
+
 
 
 //Parallax Scrolling
