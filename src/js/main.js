@@ -10,11 +10,10 @@ var $window = $(window);
 
 
 $(document).ready(function () {
-    $(window).resize(function() {
         if ($(window).width() < '768') {
             $('#parallax').css('display','none');
+            $('.welcome-page').addClass('welcome-page-tablets')
         }
-    });
 });
 
 
