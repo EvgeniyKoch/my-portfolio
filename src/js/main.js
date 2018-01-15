@@ -270,7 +270,7 @@ if(document.querySelector('#map')){
 
 
 //Parallax
-if(document.querySelector('.welcome')){
+if(document.querySelector('.welcome-page')){
     var parallaxContainer = document.getElementById('parallax');
     var layers = parallaxContainer.children;
 
@@ -294,12 +294,12 @@ if(document.querySelector('.welcome')){
     };
 
     $(document).ready(function () {
-        $(window).resize(function() {
+
             if ($(window).width() <= '768') {
                 $('#parallax').css('display','none');
+                $('.welcome-page').addClass('welcome-page-tablets')
             }
-            return this;
-        });
+
     });
 }
 window.addEventListener('mousemove', moveLayers);
