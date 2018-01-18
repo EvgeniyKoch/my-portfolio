@@ -341,7 +341,6 @@ if(document.querySelector('.welcome-page')){
         });
     };
 
-<<<<<<< HEAD
     $(document).ready(function () {
 
             if ($(window).width() <= '768') {
@@ -350,8 +349,7 @@ if(document.querySelector('.welcome-page')){
             }
 
     });
-=======
->>>>>>> preload
+
 }
 window.addEventListener('mousemove', moveLayers);
 
