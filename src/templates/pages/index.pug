@@ -6,6 +6,7 @@ html(lang='ru')
         link(rel='shortcut icon', type='image/x-icon', href='images/favicon/favicon.ico')
         link(rel='stylesheet', href='css/style.min.css')
     body
+<<<<<<< HEAD
 
         section.welcome-page
             .parallax(id="parallax")
@@ -59,6 +60,64 @@ html(lang='ru')
                     li.navigation__item
                         a.navigation__link(href='blog.html') Блог
 
+=======
+        .page-preload#page-preload
+            svg.page-preload__svg
+                use(xlink:href="images/icons/sprite.svg#preloader_round")
+            .load-perc#load-perc
+        .welcome-page#welcome-page
+            .parallax(id="parallax")
+                .parallax__layer
+                    img.parallax__img(src="images/parallax/Layer5.png")
+                .parallax__layer
+                    img.parallax__img(src="images/parallax/Layer8.png")
+                .parallax__layer
+                    img.parallax__img(src="images/parallax/Layer7.png")
+                .parallax__layer
+                    img.parallax__img.parallax__img-sky2(src="images/parallax/cloud_PNG4.png")
+                .parallax__layer
+                    img.parallax__img(src="images/parallax/Layer6.png")
+                .parallax__layer
+                    img.parallax__img(src="images/parallax/Layer4.png")
+                .parallax__layer
+                    img.parallax__img.parallax__img-sky1(src="images/parallax/sky.png")
+                .parallax__layer
+                    img.parallax__img(src="images/parallax/Layer2.png")
+                .parallax__layer
+                    img.parallax__img(src="images/parallax/Layer1.png")
+                .parallax__layer
+                    img.parallax__img.parallax__img-sky(src="images/parallax/cloud_PNG5.png")
+
+            header.head
+                a.log-in(href="#" id="log-in") Авторизоваться
+            .user-front
+                .foto
+                    img.foto__user(src='images/img/ea2.png', alt='')
+                .name
+                    p.name__user Кочетов Евгений
+                    p.name__description Личный сайт веб разработчика
+                ul.social
+                    li.social__item
+                        a.social__link(href='#')
+                            svg.social__icon(viewbox='0 0 50 50', width='35', height='40')
+                                use(xlink:href='images/icons/sprite.svg#vk')
+                    li.social__item
+                        a.social__link(href='#')
+                            svg.social__icon(viewbox='0 0 50 50', width='32', height='37')
+                                use(xlink:href='images/icons/sprite.svg#github')
+                    li.social__item
+                        a.social__link(href='#')
+                            svg.social__icon(viewbox='0 0 50 50', width='30', height='30')
+                                use(xlink:href='images/icons/sprite.svg#in')
+                ul.navigation
+                    li.navigation__item
+                        a.navigation__link(href='my-works.html') Мои работы
+                    li.navigation__item
+                        a.navigation__link(href='about.html') Обо мне
+                    li.navigation__item
+                        a.navigation__link(href='blog.html') Блог
+
+>>>>>>> preload
             form.user-login
                 h2.subtitle.subtitle-login Авторизуйтесь
                 .login
@@ -74,6 +133,7 @@ html(lang='ru')
                         span.label-custom Я человек
                     h3.test__question Вы точно не робот?
                     .test__radio-button
+<<<<<<< HEAD
                         label.test__label
                             input.test__radio(type="radio" name="radio-test")
                             span.radio-custom
@@ -81,6 +141,15 @@ html(lang='ru')
                         label.test__label
                             input.test__radio(type="radio" name="radio-test")
                             span.radio-custom
+=======
+                        label.test__label
+                            input.test__radio(type="radio" name="radio-test")
+                            span.radio-custom
+                            span.label-custom Да
+                        label.test__label
+                            input.test__radio(type="radio" name="radio-test")
+                            span.radio-custom
+>>>>>>> preload
                             span.label-custom Не уверен
                 ul.navigation
                     li.navigation__item
