@@ -8,6 +8,20 @@ var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
+
+
+
+// SCROLL
+$(".arrow-scroll , .arrow-scroll_up, .saidbar__link").on("click", function (event) {
+    event.preventDefault();
+
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+
+    $('body,html').stop().animate({scrollTop: top}, 1000);
+});
+
+//mobile
 if(document.querySelector('.welcome-page')) {
     $(document).ready(function () {
         if ($(window).resize().width() < '768') {
@@ -78,19 +92,6 @@ if(document.querySelector('.saidbar__item')){
             })
         };
 
-        // SCROLL
-        // $('.saidbar__item').on('click',function () {
-        //
-        //     event.preventDefault();
-        //
-        //     const $this = $(event.currentTarget);
-        //     let scroll_el = $this.attr('#article3');
-        //
-        //     if ($(scroll_el).length != 0) {
-        //
-        //         $('html,body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
-        //     }
-        // });
     });
 
 }
@@ -607,7 +608,3 @@ if(document.querySelectorAll('.works__slider')){
 
 
 
-//Sidebar
-// if(document.querySelector('.article')){
-//
-//     }

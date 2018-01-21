@@ -13,7 +13,7 @@ html(lang='en')
     body
         .wrapper
             .container
-                section.section-about.blog
+                section.section-about.blog(id="blog")
                     include ../common/header
                     .user-portfolio
                         .foto
@@ -21,7 +21,7 @@ html(lang='en')
                         .user-name
                             h1.title Евгений Кочетов
                             p.user__text Личный сайт веб-разработчика
-                    a.arrow-scroll.arrow-scroll_down(href='#')
+                    a.arrow-scroll.arrow-scroll_down(href='#works')
                         svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25')
                             use(xlink:href='images/icons/sprite.svg#arrow_down')
                     .about__triangle
@@ -33,7 +33,7 @@ html(lang='en')
                     .title-work
                         h1.title-works Мои работы
 
-                section.works
+                section.works(id="works")
                     .works__slider
                         .slider__info
                             ul.slider-info__list
@@ -146,7 +146,7 @@ html(lang='en')
                                 button.form__button_send(id="form__button_send") Отправить
                                 input.form__button_clear(type="reset" name="reset" value="Очистить")
 
-                    a.arrow-scroll_up(href="#")
+                    a.arrow-scroll_up(href="#blog")
                         svg.icon__scroll_up(viewbox='0 0 50 50', width='25', height='25')
                             use(xlink:href='images/icons/sprite.svg#portf_arrow_up')
                 include ../common/footer
