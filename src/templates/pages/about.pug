@@ -1,153 +1,162 @@
-extends ../template
+doctype html
+html(lang='en')
+    head
+        meta(charset="utf-8")
+        title About me
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+        link(rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico")
+        link(rel="stylesheet" href="css/style.min.css")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqo7U8AUECEzmP4BBuDooBysmapLAVPk&callback=initMap" async defer)
+    body
+        .wrapper
+            .container
+                section.section-about.blog
+                    include ../common/header
+                    .user-portfolio
+                        .foto
+                            img.foto__user(src='images/img/ea1w.png', alt='i')
+                        .user-name
+                            h1.title Евгений Кочетов
+                            p.user__text Личный сайт веб-разработчика
+                    a.arrow-scroll(href='#about')
+                        svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25' preserveAspectRatio="none")
+                            use(xlink:href='images/icons/sprite.svg#arrow_down')
+                    .about__triangle
+                        svg.about__triangle_white(xmlns="http://www.w3.org/2000/svg", viewbox='0 0 1000 85', preserveAspectRatio="none")
+                            polygon.about__triangle_left(fill="#efeee9" points="0,0 0,86 500.8,86 500.8,75.5" )
+                            polygon.about__triangle_right( fill="#eeebdf" points="1000,0 1000,86 500,86 500,75.5" )
 
-block variables
-    title  Обо мне
-block content
-    .container
-        section.section-about.blog
-            include ../common/header
-            .user-portfolio
-                .foto
-                    img.foto__user(src='images/img/ea1w.png', alt='i')
-                .user-name
-                    h1.title Евгений Кочетов
-                    p.user__text Личный сайт веб-разработчика
-            a.arrow-scroll(href='#about')
-                svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25' preserveAspectRatio="none")
-                    use(xlink:href='images/icons/sprite.svg#arrow_down')
-            .about__triangle
-                svg.about__triangle_white(xmlns="http://www.w3.org/2000/svg", viewbox='0 0 1000 85', preserveAspectRatio="none")
-                    polygon.about__triangle_left(fill="#efeee9" points="0,0 0,86 500.8,86 500.8,75.5" )
-                    polygon.about__triangle_right( fill="#eeebdf" points="1000,0 1000,86 500,86 500,75.5" )
+                section.section.about(id="about")
+                    .about__left
+                        .about__left_title
+                            h1.block-title Обо мне
+                        .about__left-content
+                            .user-description
+                                .user-description__image
+                                    img.user-description__avatar(src="images/img/im4.jpg" alt="Evgeniy")
+                                .user-description__title
+                                    h2.block-subtitle Кто я
+                                .user-description__text.text-content
+                                    p Я веб разработчик из Воронежа. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                    .about__right
+                        .about__right-title
+                            h2.block-subtitle.block-subtitle__right Чем я могу быть вам полезен
+                        .about__right-text.text-content
+                            p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                        .about__right-content
+                            ul.skills-list
+                                each item in ['Frontend']
+                                    li.skills-list__item
+                                        .skills-row__title #{item}
+                                            ul.skills-row__list
+                                                    li.skills-row__item
+                                                        svg.skill__circle(viewBox="0 0 110 110")
+                                                            circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                            circle.circle__second.circle-95(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                        span.skill__title HTML
+                                                    li.skills-row__item
+                                                        svg.skill__circle(viewBox="0 0 110 110")
+                                                            circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                            circle.circle__second.circle-85(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                        span.skill__title CSS
+                                                    li.skills-row__item
+                                                        svg.skill__circle(viewBox="0 0 110 110")
+                                                            circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                            circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                        span.skill__title JavaScript
 
-        section.section.about(id="about")
-            .about__left
-                .about__left_title
-                    h1.block-title Обо мне
-                .about__left-content
-                    .user-description
-                        .user-description__image
-                            img.user-description__avatar(src='images/img/im4.jpg')
-                        .user-description__title
-                            h2.block-subtitle Кто я
-                        .user-description__text.text-content
-                            p Я веб разработчик из Воронежа. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .about__right
-                .about__right-title
-                    h2.block-subtitle.block-subtitle__right Чем я могу быть вам полезен
-                .about__right-text.text-content
-                    p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                .about__right-content
-                    ul.skills-list
-                        each item in ['Frontend']
-                            li.skills-list__item
-                                .skills-row__title #{item}
-                                    ul.skills-row__list
-                                            li.skills-row__item
-                                                svg.skill__circle(viewBox="0 0 110 110")
-                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-95(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title HTML
-                                            li.skills-row__item
-                                                svg.skill__circle(viewBox="0 0 110 110")
-                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-85(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title CSS
-                                            li.skills-row__item
-                                                svg.skill__circle(viewBox="0 0 110 110")
-                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-25(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title JavaScript
+                                                    li.skills-row__item
+                                                        svg.skill__circle(viewBox="0 0 110 110")
+                                                            circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                            circle.circle__second.circle-40(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                        span.skill__title Jquery
 
-                                            li.skills-row__item
-                                                svg.skill__circle(viewBox="0 0 110 110")
-                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-40(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title Jquery
+                                                    li.skills-row__item
+                                                        svg.skill__circle(viewBox="0 0 110 110")
+                                                            circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                            circle.circle__second.circle-10(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                        span.skill__title Vue
+                            ul.skills-list
+                                each item in ['Backend']
+                                    li.skills-list__item
+                                        .skills-row__title #{item}
+                                            ul.skills-row__list
+                                                each skill in ['PHP', 'mySQl', 'Node.js']
+                                                    li.skills-row__item
+                                                        svg.skill__circle(viewBox="0 0 110 110")
+                                                            circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                            circle.circle__second.circle-10(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                        span.skill__title #{skill}
+                            ul.skills-list
+                                each item in ['WorkFlow']
+                                    li.skills-list__item
+                                        .skills-row__title #{item}
+                                            ul.skills-row__list
+                                                each skill in ['Git', 'Gulp','Sass', 'Pug']
+                                                    li.skills-row__item
+                                                        svg.skill__circle(viewBox="0 0 110 110")
+                                                            circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                            circle.circle__second.circle-75(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
+                                                        span.skill__title #{skill}
+                section.section.map
+                    .google-map(id="map")
+                    .map__contacts(id="map__contacts")
+                        h2.block-subtitle.contacts-subtitle Контакты
+                        ul.contacts__list
+                            li.contacts__item
+                                a.contacts-row(href="skype:genek36")
+                                    svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                        use(xlink:href='images/icons/sprite.svg#skype')
+                                    span.contacts-row__content genek36
+                            li.contacts__item
+                                a.contacts-row(href="mailto:evgkoch@list.ru")
+                                    svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                        use(xlink:href='images/icons/sprite.svg#envelope')
+                                    span.contacts-row__content evgkoch@list.ru
+                            li.contacts__item
+                                a.contacts-row(href="tel:+79056533950")
+                                    svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                        use(xlink:href='images/icons/sprite.svg#phone')
+                                    span.contacts-row__content 8 905 653 39 50
+                            li.contacts__item
+                                a.contacts-row(href="skype:genek36")
+                                    svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
+                                        use(xlink:href='images/icons/sprite.svg#map_marker')
+                                    span.contacts-row__content г.Воронеж, ул. Пятилетка, д.10
 
-                                            li.skills-row__item
-                                                svg.skill__circle(viewBox="0 0 110 110")
-                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-10(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title Vue
-                    ul.skills-list
-                        each item in ['Backend']
-                            li.skills-list__item
-                                .skills-row__title #{item}
-                                    ul.skills-row__list
-                                        each skill in ['PHP', 'mySQl', 'Node.js']
-                                            li.skills-row__item
-                                                svg.skill__circle(viewBox="0 0 110 110")
-                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-10(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title #{skill}
-                    ul.skills-list
-                        each item in ['WorkFlow']
-                            li.skills-list__item
-                                .skills-row__title #{item}
-                                    ul.skills-row__list
-                                        each skill in ['Git', 'Gulp','Sass', 'Pug']
-                                            li.skills-row__item
-                                                svg.skill__circle(viewBox="0 0 110 110")
-                                                    circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
-                                                    circle.circle__second.circle-75(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)")
-                                                span.skill__title #{skill}
-        section.section.map
-            .google-map(id="map")
-            .map__contacts(id="map__contacts")
-                h2.block-subtitle.contacts-subtitle Контакты
-                ul.contacts__list
-                    li.contacts__item
-                        a.contacts-row(href="skype:genek36")
-                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
-                                use(xlink:href='images/icons/sprite.svg#skype')
-                            span.contacts-row__content genek36
-                    li.contacts__item
-                        a.contacts-row(href="mailto:evgkoch@list.ru")
-                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
-                                use(xlink:href='images/icons/sprite.svg#envelope')
-                            span.contacts-row__content evgkoch@list.ru
-                    li.contacts__item
-                        a.contacts-row(href="tel:+79056533950")
-                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
-                                use(xlink:href='images/icons/sprite.svg#phone')
-                            span.contacts-row__content 8 905 653 39 50
-                    li.contacts__item
-                        a.contacts-row(href="skype:genek36")
-                            svg.contacts-row__icon(viewbox='0 0 50 50', preserveAspectRatio="none")
-                                use(xlink:href='images/icons/sprite.svg#map_marker')
-                            span.contacts-row__content г.Воронеж, ул. Пятилетка, д.10
+                footer.footer.footer-map
+                    .footer__up
+                        ul.footer-nav
+                            li.footer-nav__item
+                                a.footer-nav__link(href='my-works.html') Мои работы
+                            li.footer-nav__item
+                                a.footer-nav__link(href='about.html') Обо мне
+                            li.footer-nav__item
+                                a.footer-nav__link(href='blog.html') Блог
+                            li.footer-nav__item
+                                a.footer-nav__link(href='index.html') Авторизация
+                        ul.social
+                            li.social__item
+                                a.social__link(href='#')
+                                    svg.social__icon_footer(viewbox='0 0 50 50', width='32', height='37')
+                                        use(xlink:href='images/icons/sprite.svg#vk_round')
+                            li.social__item
+                                a.social__link(href='#')
+                                    svg.social__icon_footer(viewbox='0 0 50 50', width='32', height='37')
+                                        use(xlink:href='images/icons/sprite.svg#github_round')
+                            li.social__item
+                                a.social__link(href='#')
+                                    svg.social__icon_footer(viewbox='0 0 50 50', width='32', height='37')
+                                        use(xlink:href='images/icons/sprite.svg#in_round')
 
-        footer.footer.footer-map
-            .footer__up
-                ul.footer-nav
-                    li.footer-nav__item
-                        a.footer-nav__link(href='my-works.html') Мои работы
-                    li.footer-nav__item
-                        a.footer-nav__link(href='about.html') Обо мне
-                    li.footer-nav__item
-                        a.footer-nav__link(href='blog.html') Блог
-                    li.footer-nav__item
-                        a.footer-nav__link(href='index.html') Авторизация
-                ul.social
-                    li.social__item
-                        a.social__link(href='#')
-                            svg.social__icon_footer(viewbox='0 0 50 50', width='32', height='37')
-                                use(xlink:href='images/icons/sprite.svg#vk_round')
-                    li.social__item
-                        a.social__link(href='#')
-                            svg.social__icon_footer(viewbox='0 0 50 50', width='32', height='37')
-                                use(xlink:href='images/icons/sprite.svg#github_round')
-                    li.social__item
-                        a.social__link(href='#')
-                            svg.social__icon_footer(viewbox='0 0 50 50', width='32', height='37')
-                                use(xlink:href='images/icons/sprite.svg#in_round')
-            .footer__down
-                p.footer__description
-                    | Я веб-разработчик из Воронежа, и этот сайт я сделал в рамках обучения в Школе онлайн образования
-                    | LoftSchool.
-                p.footer__dev © Евгений Кочетов | создано с любовью в LoftSchool | 2017
+
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqo7U8AUECEzmP4BBuDooBysmapLAVPk&callback=initMap" async defer)
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="js/bundle.js")
 
 
 

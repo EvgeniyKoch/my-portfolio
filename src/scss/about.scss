@@ -343,9 +343,10 @@
 //------------GOOGLE-MAP--------------------------------
 .map{
   position: relative;
+
 }
 .google-map{
-  height: 100%;
+  height: 100vh;
 
 }
 .map__contacts{
@@ -382,6 +383,7 @@
     right: 3.625rem;
     @include phones{
       right: 13.625rem;
+
     }
   }
 

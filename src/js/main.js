@@ -8,14 +8,15 @@ var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
-
-$(document).ready(function () {
-        if ($(window).width() < '768') {
-            $('#parallax').css('display','none');
+if(document.querySelector('.welcome-page')) {
+    $(document).ready(function () {
+        if ($(window).resize().width() < '768') {
             $('.welcome-page').addClass('welcome-page-tablets')
-        }
-});
+            $('#parallax','parallax__layer').css('display', 'none');
 
+        }
+    });
+}
 
 //Preload
 if(document.querySelector('#page-preload')) {
@@ -93,6 +94,7 @@ if(document.querySelector('.saidbar__item')){
     });
 
 }
+
 
 
 // hamburgerMenu

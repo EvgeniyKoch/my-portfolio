@@ -1,146 +1,156 @@
-extends ../template
+doctype html
+html(lang='en')
+    head
+        meta(charset="utf-8")
+        title My works
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+        link(rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico")
+        link(rel="stylesheet" href="css/style.min.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    body
+        .wrapper
+            .container
+                section.section-about.blog
+                    include ../common/header
+                    .user-portfolio
+                        .foto
+                            img.foto__user(src='images/img/im2.jpg', alt='i')
+                        .user-name
+                            h1.title Евгений Кочетов
+                            p.user__text Личный сайт веб-разработчика
+                    a.arrow-scroll.arrow-scroll_down(href='#')
+                        svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25')
+                            use(xlink:href='images/icons/sprite.svg#arrow_down')
+                    .about__triangle
+                        svg.about__triangle-white(xmlns="http://www.w3.org/2000/svg", viewbox='0 0 1000 85', preserveAspectRatio="none")
+                            polygon.about__triangle_left-works(fill="#ffffff" points="0,0 0,86 500.8,86 500.8,75.5" )
+                            polygon.about__triangle_right-works( fill="#ffffff" points="1000,0 1000,86 500,86 500,75.5" )
 
-block variables
-    title  Обо мне
-block content
-    .container
-        section.section-about.blog
-            include ../common/header
-            .user-portfolio
-                .foto
-                    img.foto__user(src='images/img/im2.jpg', alt='i')
-                .user-name
-                    h1.title Евгений Кочетов
-                    p.user__text Личный сайт веб разработчика
-            a.arrow-scroll.arrow-scroll_down(href='#')
-                svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25')
-                    use(xlink:href='images/icons/sprite.svg#arrow_down')
-            .about__triangle
-                svg.about__triangle-white(xmlns="http://www.w3.org/2000/svg", viewbox='0 0 1000 85', preserveAspectRatio="none")
-                    polygon.about__triangle_left-works(fill="#ffffff" points="0,0 0,86 500.8,86 500.8,75.5" )
-                    polygon.about__triangle_right-works( fill="#ffffff" points="1000,0 1000,86 500,86 500,75.5" )
+                section.section.my-works
+                    .title-work
+                        h1.title-works Мои работы
 
-        section.section.my-works
-            .title-work
-                h1.title-works Мои работы
+                section.works
+                    .works__slider
+                        .slider__info
+                            ul.slider-info__list
+                                li.slider-info__item.active
+                                    .slider__title
+                                        h3.subtitle burger shop
+                                    .slider__skills
+                                        .slider__skills-text HTML, CSS, JAVASCRIPT
+                                    .slider__link-wrap
+                                        a.slider__button(href="http://evgkoch.xyz")
+                                            .slider__button-svg
+                                                svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
+                                                    use(xlink:href='images/icons/sprite.svg#link')
+                                                span.text-link Посмотреть сайт
+                                li.slider-info__item
+                                    .slider__title
+                                        h3.subtitle Сайт 2
+                                    .slider__skills
+                                        .slider__skills-text PUG, SASS
+                                    .slider__link-wrap
+                                        a.slider__button(href="#")
+                                            .slider__button-svg
+                                                svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
+                                                    use(xlink:href='images/icons/sprite.svg#link')
+                                                span.text-link Посмотреть сайт
+                                li.slider-info__item
+                                    .slider__title
+                                        h3.subtitle Сайт 3
+                                    .slider__skills
+                                        .slider__skills-text JADE, SCSS, NODE JS
+                                    .slider__link-wrap
+                                        a.slider__button(href="#")
+                                            .slider__button-svg
+                                                svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
+                                                    use(xlink:href='images/icons/sprite.svg#link')
+                                                span.text-link Посмотреть сайт
+                                li.slider-info__item
+                                    .slider__title
+                                        h3.subtitle Сайт 4
+                                    .slider__skills
+                                        .slider__skills-text PHP, POST CSS
+                                    .slider__link-wrap
+                                        a.slider__button(href="#")
+                                            .slider__button-svg
+                                                svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
+                                                    use(xlink:href='images/icons/sprite.svg#link')
+                                                span.text-link Посмотреть сайт
+                        .slider__right-top
+                            .slider-screen
+                                ul.carousel-main
+                                    li.carousel-main__slide.active
+                                        img.slider-screen__img(src="images/slider/slide.png" alt="burger-shop")
+                                    li.carousel-main__slide
+                                        img.slider-screen__img(src="images/slider/slide-1.png" alt="site")
+                                    li.carousel-main__slide
+                                        img.slider-screen__img(src="images/slider/work1.png" alt="site")
+                                    li.carousel-main__slide
+                                        img.slider-screen__img(src="images/slider/work2.png" alt="site")
+                        .slider__btns
+                            button.previous-slide.slider__link#previous
+                                ul.carousel-slides
+                                    li.carousel-slides__slide.carousel-slides__slide-previous.old-active
+                                        img.slider__img(src="images/slider/slide.png" alt="burger-shop")
+                                    li.carousel-slides__slide.carousel-slides__slide-previous
+                                        img.slider__img(src="images/slider/slide-1.png" alt="site")
+                                    li.carousel-slides__slide.carousel-slides__slide-previous.next-active
+                                        img.slider__img(src="images/slider/work1.png" alt="site")
+                                    li.carousel-slides__slide.carousel-slides__slide-previous.active
+                                        img.slider__img(src="images/slider/work2.png" alt="site")
+                            button.next-slide.slider__link#next
+                                ul.carousel-slides
+                                    li.carousel-slides__slide.carousel-slides__slide-next.old-active
+                                        img.slider__img(src="images/slider/slide.png" alt="burger-shop")
+                                    li.carousel-slides__slide.carousel-slides__slide-next.active
+                                        img.slider__img(src="images/slider/slide-1.png" alt="site")
+                                    li.carousel-slides__slide.carousel-slides__slide-next.next-active
+                                        img.slider__img(src="images/slider/work1.png" alt="site")
+                                    li.carousel-slides__slide.carousel-slides__slide-next
+                                        img.slider__img(src="images/slider/work2.png" alt="site")
 
-        section.works
-            .works__slider
-                .slider__info
-                    ul.slider-info__list
-                        li.slider-info__item.active
-                            .slider__title
-                                h3.subtitle Сайт 1
-                            .slider__skills
-                                .slider__skills-text HTML, CSS, JAVASCRIPT
-                            .slider__link-wrap
-                                a.slider__button(href="#")
-                                    .slider__button-svg
-                                        svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
-                                            use(xlink:href='images/icons/sprite.svg#link')
-                                        span.text-link Посмотреть сайт
-                        li.slider-info__item
-                            .slider__title
-                                h3.subtitle Сайт 2
-                            .slider__skills
-                                .slider__skills-text PUG, SASS
-                            .slider__link-wrap
-                                a.slider__button(href="#")
-                                    .slider__button-svg
-                                        svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
-                                            use(xlink:href='images/icons/sprite.svg#link')
-                                        span.text-link Посмотреть сайт
-                        li.slider-info__item
-                            .slider__title
-                                h3.subtitle Сайт 3
-                            .slider__skills
-                                .slider__skills-text JADE, SCSS, NODE JS
-                            .slider__link-wrap
-                                a.slider__button(href="#")
-                                    .slider__button-svg
-                                        svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
-                                            use(xlink:href='images/icons/sprite.svg#link')
-                                        span.text-link Посмотреть сайт
-                        li.slider-info__item
-                            .slider__title
-                                h3.subtitle Сайт 4
-                            .slider__skills
-                                .slider__skills-text PHP, POST CSS
-                            .slider__link-wrap
-                                a.slider__button(href="#")
-                                    .slider__button-svg
-                                        svg.slider__button-svg-white(viewbox='0 0 50 50', width='25', height='25')
-                                            use(xlink:href='images/icons/sprite.svg#link')
-                                        span.text-link Посмотреть сайт
-                .slider__right-top
-                    .slider-screen
-                        ul.carousel-main
-                            li.carousel-main__slide.active
-                                img.slider-screen__img(src="images/slider/slide.png")
-                            li.carousel-main__slide
-                                img.slider-screen__img(src="images/slider/slide-1.png")
-                            li.carousel-main__slide
-                                img.slider-screen__img(src="images/slider/work1.png")
-                            li.carousel-main__slide
-                                img.slider-screen__img(src="images/slider/work2.png")
-                .slider__btns
-                    button.previous-slide.slider__link#previous
-                        ul.carousel-slides
-                            li.carousel-slides__slide.carousel-slides__slide-previous.old-active
-                                img.slider__img(src="images/slider/slide.png")
-                            li.carousel-slides__slide.carousel-slides__slide-previous
-                                img.slider__img(src="images/slider/slide-1.png")
-                            li.carousel-slides__slide.carousel-slides__slide-previous.next-active
-                                img.slider__img(src="images/slider/work1.png")
-                            li.carousel-slides__slide.carousel-slides__slide-previous.active
-                                img.slider__img(src="images/slider/work2.png")
-                    button.next-slide.slider__link#next
-                        ul.carousel-slides
-                            li.carousel-slides__slide.carousel-slides__slide-next.old-active
-                                img.slider__img(src="images/slider/slide.png")
-                            li.carousel-slides__slide.carousel-slides__slide-next.active
-                                img.slider__img(src="images/slider/slide-1.png")
-                            li.carousel-slides__slide.carousel-slides__slide-next.next-active
-                                img.slider__img(src="images/slider/work1.png")
-                            li.carousel-slides__slide.carousel-slides__slide-next
-                                img.slider__img(src="images/slider/work2.png")
+                section.section.speak
+                    .title-speak
+                        h1.title-speaks Что обо мне говорят
+                    .speak-description
+                        .loft-description
+                            img.loft-description__img(src='images/img/quotes.png', alt='quotes')
+                            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .loft-user
+                                .loft-user__img
+                                    img.loft-user__pic(src='images/img/kovalchuk.jpg', alt='Kovalchuk')
+                                .loft-name
+                                    p Ковальчук Дмитрий
+                                    p основатель Loftscool
+                        .loft-description
+                            img.loft-description__img(src='images/img/quotes.png', alt='quotes')
+                            p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            .loft-user
+                                .loft-user__img
+                                    img.loft-user__pic(src='images/img/sabancev.jpg', alt='Sabancev')
+                                .loft-name
+                                    p Сабанцев Владимир
+                                    p преподаватель
+                    .block-form
+                        form.form
+                            h2.subtitle.subtitle-form Связаться со мной
+                            input.form__input.form__name(type="text" placeholder="Имя")
+                            input.form__input.form__email(type="email" placeholder="Email")
+                            textarea.form__message(placeholder="Ваше сообщение")
+                            .form__button
+                                button.form__button_send(id="form__button_send") Отправить
+                                input.form__button_clear(type="reset" name="reset" value="Очистить")
 
-        section.section.speak
-            .title-speak
-                h1.title-speaks Что обо мне говорят
-            .speak-description
-                .loft-description
-                    img.loft-description__img(src='images/img/quotes.png', alt='quotes')
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .loft-user
-                        .loft-user__img
-                            img.loft-user__pic(src='images/img/kovalchuk.jpg', alt='Kovalchuk')
-                        .loft-name
-                            p Ковальчук Дмитрий
-                            p основатель Loftscool
-                .loft-description
-                    img.loft-description__img(src='images/img/quotes.png', alt='quotes')
-                    p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                    .loft-user
-                        .loft-user__img
-                            img.loft-user__pic(src='images/img/sabancev.jpg', alt='Sabancev')
-                        .loft-name
-                            p Сабанцев Владимир
-                            p преподаватель
-            .block-form
-                form.form
-                    h2.subtitle.subtitle-form Связаться со мной
-                    input.form__input.form__name(type="text" placeholder="Имя")
-                    input.form__input.form__email(type="email" placeholder="Email")
-                    textarea.form__message(placeholder="Ваше сообщение")
-                    .form__button
-                        button.form__button_send(id="form__button_send") Отправить
-                        input.form__button_clear(type="reset" name="reset" value="Очистить")
-
-            a.arrow-scroll_up(href="#")
-                svg.icon__scroll_up(viewbox='0 0 50 50', width='25', height='25')
-                    use(xlink:href='images/icons/sprite.svg#portf_arrow_up')
-        include ../common/footer
+                    a.arrow-scroll_up(href="#")
+                        svg.icon__scroll_up(viewbox='0 0 50 50', width='25', height='25')
+                            use(xlink:href='images/icons/sprite.svg#portf_arrow_up')
+                include ../common/footer
+        script(src='js/bundle.js')
 
 
 
