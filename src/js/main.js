@@ -24,9 +24,9 @@ $(".arrow-scroll , .arrow-scroll_up, .saidbar__link").on("click", function (even
 //mobile
 if(document.querySelector('.welcome-page')) {
         $(document).ready(function () {
-            if ($(window).resize().width() > '768') {
-                // $('.welcome-page').addClass('welcome-page-tablets')
-                $('#parallax, .parallax__layer').css('display', 'block');
+            if ($(window).resize().width() < '768') {
+                $('.welcome-page').addClass('welcome-page-tablets')
+                $('#parallax, .parallax__layer').css('display', 'none');
 
             }
         });
@@ -320,42 +320,42 @@ if(document.querySelector('#map')){
 }
 
 
-
-
 //Parallax
-if(document.querySelector('.welcome-page')){
-    var parallaxContainer = document.getElementById('parallax');
-    var layers = parallaxContainer.children;
+if(document.querySelector('.welcome-page')) {
+    if ($(window).resize().width() > '768') {
+        var parallaxContainer = document.getElementById('parallax');
+        var layers = parallaxContainer.children;
 
-    var moveLayers = function (e) {
-        var initialX = (window.innerWidth / 2) - e.pageX;
-        var initialY = (window.innerHeight / 2) - e.pageY;
+        var moveLayers = function (e) {
+            var initialX = (window.innerWidth / 2) - e.pageX;
+            var initialY = (window.innerHeight / 2) - e.pageY;
 
-        [].slice.call(layers).forEach(function (layer, index) {
-            var
-                divider = index / 40,
-                positionX = initialX * divider,
-                positionY = initialY * divider,
-                bottomPosition = (window.innerHeight / 2) * divider,
-                transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
-                image = layer.firstElementChild;
+            [].slice.call(layers).forEach(function (layer, index) {
+                var
+                    divider = index / 40,
+                    positionX = initialX * divider,
+                    positionY = initialY * divider,
+                    bottomPosition = (window.innerHeight / 2) * divider,
+                    transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
+                    image = layer.firstElementChild;
 
-            layer.style.transform = transformString;
-            image.style.bottom = '-' + bottomPosition + 'px';
+                layer.style.transform = transformString;
+                image.style.bottom = '-' + bottomPosition + 'px';
 
-        });
-    };
+            });
+        };
 
-    $(document).ready(function () {
+        $(document).ready(function () {
 
             if ($(window).width() <= '768') {
-                $('#parallax').css('display','none');
+                $('#parallax').css('display', 'none');
                 $('.welcome-page').addClass('welcome-page-tablets')
             }
 
-    });
+        });
 
 
+    }
 }
 window.addEventListener('mousemove', moveLayers);
 
