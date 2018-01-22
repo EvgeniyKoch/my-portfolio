@@ -14,12 +14,11 @@ var $window = $(window);
 // SCROLL
 $(".arrow-scroll , .arrow-scroll_up, .saidbar__link").on("click", function (event) {
     event.preventDefault();
-
     var id  = $(this).attr('href'),
         top = $(id).offset().top;
-
     $('body,html').stop().animate({scrollTop: top}, 1000);
 });
+
 
 //mobile
 if(document.querySelector('.welcome-page')) {
@@ -27,7 +26,7 @@ if(document.querySelector('.welcome-page')) {
             if ($(window).resize().width() < '768') {
                 $('.welcome-page').addClass('welcome-page-tablets')
                 $('#parallax, .parallax__layer').css('display', 'none');
-                $('')
+                $('.page-preload').css('display', 'none');
 
             }
         });
