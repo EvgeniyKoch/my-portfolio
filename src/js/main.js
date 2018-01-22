@@ -27,6 +27,7 @@ if(document.querySelector('.welcome-page')) {
             if ($(window).resize().width() < '768') {
                 $('.welcome-page').addClass('welcome-page-tablets')
                 $('#parallax, .parallax__layer').css('display', 'none');
+                $('')
 
             }
         });
@@ -34,6 +35,7 @@ if(document.querySelector('.welcome-page')) {
 
 
 //Preload
+
 if(document.querySelector('#page-preload')) {
     (function () {
         let

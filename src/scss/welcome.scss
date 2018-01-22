@@ -31,6 +31,7 @@
   align-items: center;
 
 
+
   .load-perc{
     font-size: 25px;
     color: #fff;
@@ -65,61 +66,7 @@
   0%{stroke-dashoffset: 0;}
   100%{stroke-dashoffset: 392;}
 }
-//===============================Preload
-.page-preload{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../images/background/bg.jpg") no-repeat;
-  background-size: cover;
-  z-index: 9999;
-  transition: .3s opacity,visibility;
-  opacity: 1;
-  visibility: visible;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-
-  .load-perc{
-    font-size: 25px;
-    color: #fff;
-    position: absolute;
-  }
-
-}
-
-.page-preload_done{
-  opacity: 0;
-  z-index: -9999;
-  visibility: hidden;
-}
-
-.welcome-page_show{
-  opacity: 1;
-  visibility: visible;
-
-}
-
-.page-preload__svg {
-  fill:none;
-  stroke: #fff;
-  width: 120px;
-  height: 120px;
-  stroke-width: 4px;
-  stroke-dasharray: 196;
-  stroke-dashoffset: 0;
-  animation: pagePreload 3s linear infinite;
-}
-
-@keyframes pagePreload {
-  0%{stroke-dashoffset: 0;}
-  100%{stroke-dashoffset: 392;}
-}
-//====================Preload
-
+//========================================
 
 .parallax{
   position: absolute;
