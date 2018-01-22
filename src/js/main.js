@@ -23,13 +23,13 @@ $(".arrow-scroll , .arrow-scroll_up, .saidbar__link").on("click", function (even
 
 //mobile
 if(document.querySelector('.welcome-page')) {
-    $(document).ready(function () {
-        if ($(window).resize().width() < '768') {
-            $('.welcome-page').addClass('welcome-page-tablets')
-            $('#parallax, .parallax__layer').css('display', 'none');
+        $(document).ready(function () {
+            if ($(window).resize().width() > '768') {
+                // $('.welcome-page').addClass('welcome-page-tablets')
+                $('#parallax, .parallax__layer').css('display', 'block');
 
-        }
-    });
+            }
+        });
 }
 
 
