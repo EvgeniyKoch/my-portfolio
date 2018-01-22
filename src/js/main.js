@@ -26,8 +26,8 @@ if(document.querySelector('.welcome-page')) {
             if ($(window).resize().width() < '768') {
                 $('.welcome-page').addClass('welcome-page-tablets')
                 $('#parallax, .parallax__layer').css('display', 'none');
-                $('.page-preload').css('display', 'none');
-
+            }else if ($(window).resize().width() > '768') {
+                $('.page-preload').css('display', 'flex');
             }
         });
 }
@@ -36,43 +36,46 @@ if(document.querySelector('.welcome-page')) {
 //Preload
 
 if(document.querySelector('#page-preload')) {
-    (function () {
-        let
-            imagesAll = document.images,
-            imagesTotalCount = imagesAll.length,
-            imagesLoadCount = 0,
-            preload = document.getElementById('page-preload'),
-            percDisplay = document.getElementById('load-perc'),
-            content = document.getElementById('welcome-page');
+    if ($(window).resize().width() > '768') {
+
+        (function () {
+            let
+                imagesAll = document.images,
+                imagesTotalCount = imagesAll.length,
+                imagesLoadCount = 0,
+                preload = document.getElementById('page-preload'),
+                percDisplay = document.getElementById('load-perc'),
+                content = document.getElementById('welcome-page');
 
 
-        for (let i = 0; i < imagesTotalCount; i++) {
-            let imgClone = new Image();
-            imgClone.onload = imgLoaded;
-            imgClone.onerror = imgLoaded;
-            imgClone.src = imagesAll[i].src;
-        }
-
-
-        function imgLoaded() {
-            imagesLoadCount++;
-            percDisplay.innerHTML = (( (100 / imagesTotalCount) * imagesLoadCount) << 0);
-            if (((100 / imagesTotalCount) * imagesLoadCount) >= 100) {
-                percDisplay.innerHTML = '100';
+            for (let i = 0; i < imagesTotalCount; i++) {
+                let imgClone = new Image();
+                imgClone.onload = imgLoaded;
+                imgClone.onerror = imgLoaded;
+                imgClone.src = imagesAll[i].src;
             }
-            if (imagesLoadCount >= imagesTotalCount) {
-                setTimeout(function () {
-                    if (!preload.classList.contains('done')) {
-                        preload.classList.add('page-preload_done');
-                        content.classList.add('welcome-page_show')
-                    }
-                }, 500)
+
+
+            function imgLoaded() {
+                imagesLoadCount++;
+                percDisplay.innerHTML = (( (100 / imagesTotalCount) * imagesLoadCount) << 0);
+                if (((100 / imagesTotalCount) * imagesLoadCount) >= 100) {
+                    percDisplay.innerHTML = '100';
+                }
+                if (imagesLoadCount >= imagesTotalCount) {
+                    setTimeout(function () {
+                        if (!preload.classList.contains('done')) {
+                            preload.classList.add('page-preload_done');
+                            content.classList.add('welcome-page_show')
+                        }
+                    }, 500)
+                }
             }
-        }
 
-        imgLoaded();
+            imgLoaded();
 
-    })();
+        })();
+    }
 }
 
 if(document.querySelector('.saidbar__item')){
