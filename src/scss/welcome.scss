@@ -196,12 +196,10 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 35px;
-
-  //&_active{
-  //  transform: rotateY(180deg) translate(50%,-50%);
-  //  backface-visibility: hidden;
-  //  transition: 1s;
-  //}
+  @include phones{
+    width: 36.75rem;
+    height: 36.6875rem;
+  }
 }
 
 .foto {
@@ -296,6 +294,10 @@
   //&_active{
   //  transform: translate(-50%, -50%);
   //}
+  @include phones{
+    width: 36.75rem;
+    height: 36.6875rem;
+  }
 }
 .subtitle-login{
   position: relative;
