@@ -26,11 +26,12 @@ if(document.querySelector('.welcome-page')) {
     $(document).ready(function () {
         if ($(window).resize().width() < '768') {
             $('.welcome-page').addClass('welcome-page-tablets')
-            $('#parallax','parallax__layer').css('display', 'none');
+            $('#parallax, .parallax__layer').css('display', 'none');
 
         }
     });
 }
+
 
 //Preload
 if(document.querySelector('#page-preload')) {
@@ -95,6 +96,7 @@ if(document.querySelector('.saidbar__item')){
     });
 
 }
+
 
 
 
@@ -352,6 +354,7 @@ if(document.querySelector('.welcome-page')){
             }
 
     });
+
 
 }
 window.addEventListener('mousemove', moveLayers);

@@ -17,7 +17,7 @@
 .navigation__humburger{
   display: flex;
   flex-direction: column;
-  z-index: 11;
+  z-index: 9999;
 }
 .navigation__line{
   width: 40px;
@@ -44,7 +44,7 @@
 .menu{
   opacity: 0;
   visibility: hidden;
-  position: fixed;
+  position: absolute;
  @include center;
   &_active{
     position: fixed;
@@ -52,7 +52,7 @@
     opacity: 1;
     visibility: visible;
     transition: 1.6s;
-    z-index: 10;
+    z-index: 990;
   }
   &__list{
     text-align: center;
@@ -87,26 +87,26 @@
   }
 }
 .drop-left {
-  position: fixed;
+  position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: -9999px;
   left: 0;
   width:0;
   background:rgba($aquamarine,.9);
-  z-index: 9;
+  z-index: 899;
   transition: .3s;
   &_active {
     width: 50%;
   }
 }
   .drop-right {
-  position: fixed;
+  position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: -8999px;
   right: 0;
     width:0;
   background:rgba($aquamarine,.9);
-  z-index: 9;
+  z-index: 899;
   transition: .3s;
   &_active{
     width: 50%;

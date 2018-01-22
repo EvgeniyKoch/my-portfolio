@@ -21,6 +21,9 @@
 }
 .about__triangle{
   bottom:-6px;
+  @include tablets{
+    bottom:-8px;
+  }
 }
 .about__triangle_left-works{
   fill:$white;
@@ -94,6 +97,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
+  justify-content: center;
+  align-items:center;
 
   @include netbook{
     height: auto;
@@ -189,6 +194,12 @@
 .slider-screen{
   width: 600px;
   height: 400px;
+  @include tablets{
+    height:250px;
+  }
+  @include phones{
+
+  }
 }
 
 .carousel-main{
