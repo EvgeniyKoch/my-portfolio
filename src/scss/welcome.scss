@@ -13,10 +13,6 @@
     bottom: 0;
   }
 }
-
-
-
-
 //=======================Preload
 .page-preload{
   position: fixed;
@@ -33,9 +29,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-
 
   .load-perc{
     font-size: 25px;
@@ -152,8 +145,8 @@
 
 .foto {
   overflow: hidden;
-  width: 135px;
-  height: 135px;
+  width: 7.438rem;;
+  height: 7.438rem;;
   border-radius: 50%;
   &__user {
     max-width: 100%;
@@ -242,10 +235,6 @@
   //&_active{
   //  transform: translate(-50%, -50%);
   //}
-  @include phones{
-    width: 36.75rem;
-    height: 36.6875rem;
-  }
 }
 .subtitle-login{
   position: relative;
@@ -322,9 +311,7 @@
   justify-content: center;
   margin-bottom:15px;
 }
-.test__checkbox,.test__radio{
-  display: none;
-}
+
 .label-custom{
   @include robotoreg;
   margin-left:5px;
@@ -377,6 +364,9 @@
   border-radius: 50%;
 }
 
+.test__checkbox,.test__radio{
+  display: none;
+}
 
 .dev {
   position: absolute;

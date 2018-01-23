@@ -138,6 +138,7 @@
   flex-direction: column;
   align-items: center;
   transition: opacity .5s;
+
   &.active{
     opacity: 1;
     z-index: 10;
