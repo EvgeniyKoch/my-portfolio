@@ -8,9 +8,10 @@ var dropDownMenuLeft = document.querySelector('.drop-left');
 var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
-
 //Preload
+
 if(document.querySelector('#page-preload')) {
+
 
         (function () {
             let
@@ -29,7 +30,6 @@ if(document.querySelector('#page-preload')) {
                 imgClone.src = imagesAll[i].src;
             }
 
-
             function imgLoaded() {
                 imagesLoadCount++;
                 percDisplay.innerHTML = (( (100 / imagesTotalCount) * imagesLoadCount) << 0);
@@ -45,16 +45,14 @@ if(document.querySelector('#page-preload')) {
                     }, 500)
                 }
             }
-
             imgLoaded();
-
         })();
 }
 
 
 //Parallax
 if(document.querySelector('.welcome-page')) {
-
+    if ($(window).resize().width() > '768') {
         var parallaxContainer = document.getElementById('parallax');
         var layers = parallaxContainer.children;
 
@@ -76,34 +74,45 @@ if(document.querySelector('.welcome-page')) {
 
             });
         };
-}
-window.addEventListener('mousemove', moveLayers);
 
-if(document.querySelector('.saidbar__item')){
-    // SideBar
-    $(document).ready(function () {
-        var $item = document.getElementsByClassName('saidbar__item'),
-            activeItem = 'saidbar__item-active';
+        $(document).ready(function () {
 
-        for (var i = 0; i < $item.length; i++) {
-            $item[i].addEventListener('click', function() {
-                if(!(this.classList.contains(activeItem))) {
-                    for (var j = 0; j < $item.length; j++) {
-                        $item[j].classList.remove(activeItem);
-                        this.classList.add(activeItem);
-                    }
-                } else {
-                    this.classList.remove(activeItem);
+            if ($(window).width() <= '768') {
+                $('#parallax').css('display', 'none');
+                $('.welcome-page').addClass('welcome-page-tablets')
+            }
+
+        });
+
+
+        window.addEventListener('mousemove', moveLayers);
+
+        if (document.querySelector('.saidbar__item')) {
+            // SideBar
+            $(document).ready(function () {
+                var $item = document.getElementsByClassName('saidbar__item'),
+                    activeItem = 'saidbar__item-active';
+
+                for (var i = 0; i < $item.length; i++) {
+                    $item[i].addEventListener('click', function () {
+                        if (!(this.classList.contains(activeItem))) {
+                            for (var j = 0; j < $item.length; j++) {
+                                $item[j].classList.remove(activeItem);
+                                this.classList.add(activeItem);
+                            }
+                        } else {
+                            this.classList.remove(activeItem);
+                        }
+                    })
                 }
-            })
-        };
+                ;
 
-    });
+            });
 
+        }
+
+    }
 }
-
-
-
 
 // hamburgerMenu
 if(login ) {

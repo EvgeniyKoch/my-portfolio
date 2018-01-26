@@ -1,5 +1,8 @@
 .section-about{
   min-height: 650px;
+  @include phones{
+    min-height:35.625rem;
+  }
 
   &:before {
     background: url("../images/icons/portfolio_header.svg")no-repeat;

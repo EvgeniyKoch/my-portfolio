@@ -4,6 +4,9 @@
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+  @include phones{
+    min-height:35.625rem;
+  }
 }
 
 .user-blog{

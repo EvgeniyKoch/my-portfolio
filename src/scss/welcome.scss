@@ -98,7 +98,7 @@
     width: 120%;
     bottom:0;
     will-change: transform;
-    @include tablets{
+    @include tablets {
       display: none;
     }
   }
