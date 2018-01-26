@@ -1,4 +1,5 @@
 node_modules/
+build/
 prepros-6.config
 .idea/
 *.lnk
@@ -6,4 +7,3 @@ prepros-6.config
 *.msi
 *.msm
 *.msp
-build/
