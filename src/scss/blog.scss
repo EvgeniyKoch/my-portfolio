@@ -85,18 +85,7 @@
     transition: .2s;
   }
 }
-.about__triangle-blog{
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  right: 0;
-  @include tablets{
-    fill:#ffffff;
-  }
-  @include phones{
-    bottom:-10px;
-  }
-}
+
 .main-blog{
   display: flex;
   justify-content: center;

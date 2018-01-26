@@ -8,6 +8,7 @@ html(lang='en')
         meta(content="width=device-width, initial-scale=1" name="viewport")
         meta(content="ie=edge" http-equiv="x-ua-compatible")
         link(rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous")
         link(rel="stylesheet" href="css/style.min.css")
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqo7U8AUECEzmP4BBuDooBysmapLAVPk&callback=initMap" async defer)
     body
@@ -19,7 +20,7 @@ html(lang='en')
                         .foto
                             img.foto__user(src='images/img/ea1.png', alt='i')
                         .user-name
-                            h1.title Евгений Кочетов
+                            h1.title.animated.infinite.rubberBand Евгений Кочетов
                             p.user__text Личный сайт веб-разработчика
                     a.arrow-scroll(href='#about')
                         svg.icon__scroll(viewbox='0 0 50 50', width='25', height='25' preserveAspectRatio="none")
