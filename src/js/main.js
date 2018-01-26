@@ -9,25 +9,8 @@ var dropDownMenuRight = document.querySelector('.drop-right');
 var $window = $(window);
 
 
-
-//mobile
-if(document.querySelector('.welcome-page')) {
-        $(document).ready(function () {
-            if ($(window).resize().width() < '768') {
-                $('.welcome-page').addClass('welcome-page-tablets');
-                $('#parallax, .parallax__layer').css('display', 'none');
-                $('.page-preload').css('display', 'none');
-            }else if ($(window).resize().width() > '768') {
-                $('.page-preload').css('display', 'flex');
-            }
-        });
-}
-
-
 //Preload
-
 if(document.querySelector('#page-preload')) {
-    if ($(window).resize().width() > '768') {
 
         (function () {
             let
@@ -66,13 +49,12 @@ if(document.querySelector('#page-preload')) {
             imgLoaded();
 
         })();
-    }
 }
 
 
 //Parallax
 if(document.querySelector('.welcome-page')) {
-    if ($(window).resize().width() > '768') {
+
         var parallaxContainer = document.getElementById('parallax');
         var layers = parallaxContainer.children;
 
@@ -94,18 +76,6 @@ if(document.querySelector('.welcome-page')) {
 
             });
         };
-
-        $(document).ready(function () {
-
-            if ($(window).width() <= '768') {
-                $('#parallax').css('display', 'none');
-                $('.welcome-page').addClass('welcome-page-tablets')
-            }
-
-        });
-
-
-    }
 }
 window.addEventListener('mousemove', moveLayers);
 

@@ -1,9 +1,20 @@
 .welcome-page {
+  height:100vh;
   min-height: 40.625rem;
+  position: relative;
   @include iphone5{
     min-height: 580px;
   }
   &-tablets{
+    background:url("../images/background/bg_welcome.png")center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  @include tablets{
     background:url("../images/background/bg_welcome.png")center center no-repeat;
     background-size: cover;
     position: absolute;
@@ -75,6 +86,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  @include tablets{
+    display: none;
+  }
 
   &__layer{
     position: absolute;
@@ -82,7 +96,11 @@
     left: -10%;
     height: 100%;
     width: 120%;
+    bottom:0;
     will-change: transform;
+    @include tablets{
+      display: none;
+    }
   }
   &__img {
     position: absolute;
