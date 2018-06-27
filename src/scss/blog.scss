@@ -103,6 +103,8 @@
     align-items: flex-end;
     padding: 0 50px;
     text-align: right;
+    position: sticky;
+    top: 0;
   }
   &__item{
     margin-bottom:35px;
