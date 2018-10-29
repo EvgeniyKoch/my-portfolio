@@ -1208,6 +1208,10 @@ a {
     position: relative;
 }
 
+.saidbar__link:hover  {
+    color: #00bfa5;
+}
+
 .saidbar__item-active .saidbar__link:after {
     content: '';
     position: absolute;
