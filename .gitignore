@@ -6,3 +6,4 @@ prepros-6.config
 *.msi
 *.msm
 *.msp
+src/
