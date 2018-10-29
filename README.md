@@ -1,6 +1,6 @@
 
 <h1 align='center'>
-<a href='https://evgeniykoch.github.io/my-portfolio.io/build/index.html' target='_blank'>Персонaльный сайт <img src="http://i84.fastpic.ru/big/2016/1123/00/836cda96dd547f08c1037e72d583e600.jpg" alt="developer" width='35px' height='35px'></a>
+<a href='https://evgeniykoch.github.io/my-portfolio/build/index.html' target='_blank'>Персонaльный сайт </a>
 </h1>
 
 ---
